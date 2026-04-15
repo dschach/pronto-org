@@ -1,0 +1,190 @@
+<template>
+    <div class="slds-grid slds-gutters slds-wrap">
+        <!-- Left Panel - Categories -->
+        <div class="slds-col slds-size_1-of-4">
+            <div class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title slds-truncate" title="Menu Categories">Menu Categories</h2>
+                        </div>
+                    </header>
+                </div>
+                <div class="slds-card__body">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <input type="text" 
+                                   placeholder="Search categories..." 
+                                   class="slds-input"
+                                   value={searchKeyword}
+                                   onchange={handleSearchInput} />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-scrollable_y" style="max-height: 400px;">
+                        <ul class="slds-list_vertical slds-has-dividers_top-space">
+                            <li class="slds-list__item">
+                                <button class="slds-button slds-button_neutral slds-button_stretch"
+                                        onclick={handleAllCategories}>
+                                    <span>All Categories</span>
+                                </button>
+                            </li>
+                            <template for:each={categories} for:item="category">
+                                <li class="slds-list__item" key={category.id}>
+                                    <button class="slds-button slds-button_neutral slds-button_stretch"
+                                            onclick={handleCategorySelect}
+                                            data-category-id={category.id}>
+                                        <span>{category.Name}</span>
+                                        <span class="slds-badge slds-badge_lightest slds-float_right">
+                                            {category.itemCount}
+                                        </span>
+                                    </button>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel - Menu Items -->
+        <div class="slds-col slds-size_3-of-4">
+            <div class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title slds-truncate" title="Menu Items">
+                                Menu Items
+                                <span if:true={selectedCategoryName} class="slds-text-title_caps slds-text-color_weak slds-m-left_x-small">
+                                    ({selectedCategoryName})
+                                </span>
+                                <span class="slds-text-title_caps slds-text-color_weak slds-m-left_x-small">
+                                    ({itemsCount})
+                                </span>
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+                
+                <div class="slds-card__body">
+                    <!-- Filters -->
+                    <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_medium">
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <input type="text" 
+                                           placeholder="Search items..." 
+                                           class="slds-input"
+                                           value={searchKeyword}
+                                           onchange={handleSearchInput} />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <label class="slds-checkbox">
+                                        <input type="checkbox" 
+                                               checked={showVegetarian}
+                                               onchange={handleVegetarianFilter} />
+                                        <span class="slds-checkbox_faux"></span>
+                                        <span class="slds-form-element__label">Vegetarian</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <label class="slds-checkbox">
+                                        <input type="checkbox" 
+                                               checked={showSpicy}
+                                               onchange={handleSpicyFilter} />
+                                        <span class="slds-checkbox_faux"></span>
+                                        <span class="slds-form-element__label">Spicy</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <template if:true={loading}>
+                        <div class="slds-text-align_center">
+                            <lightning-spinner alternative-text="Loading menu items..." size="large"></lightning-spinner>
+                            <p class="slds-text-body_small slds-m-top_small">Loading menu data...</p>
+                        </div>
+                    </template>
+
+                    <!-- Error State -->
+                    <template if:true={hasError}>
+                        <div class="slds-alert slds-alert_error" role="alert">
+                            <h2 class="slds-text-heading_small">Error loading menu data</h2>
+                            <p>{error.body.message}</p>
+                        </div>
+                    </template>
+
+                    <!-- Empty State -->
+                    <template if:true={hasItems}>
+                        <div class="slds-grid slds-gutters slds-wrap">
+                            <template for:each={filteredItems} for:item="item">
+                                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3" key={item.Id}>
+                                    <div class="slds-card slds-card_boundary">
+                                        <div class="slds-card__header slds-grid">
+                                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                <div class="slds-media__body">
+                                                    <h3 class="slds-card__header-title slds-truncate" title={item.Name}>{item.Name}</h3>
+                                                </div>
+                                            </header>
+                                        </div>
+                                        <div class="slds-card__body">
+                                            <template if:true={item.Image_URL__c}>
+                                                <img src={item.Image_URL__c} 
+                                                     alt={item.Name} 
+                                                     class="slds-image slds-image_centered slds-m-bottom_small"
+                                                     style="max-height: 150px; max-width: 100%;" />
+                                            </template>
+                                            
+                                            <p class="slds-text-body_small slds-m-bottom_small">
+                                                {item.Description__c}
+                                            </p>
+                                            
+                                            <div class="slds-grid slds-gutters slds-wrap">
+                                                <div class="slds-col slds-size_1-of-2">
+                                                    <span class="slds-text-title slds-text-color_weak">Price:</span>
+                                                    <span class="slds-text-body_medium slds-text-color_success">${item.Price__c}</span>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2 slds-text-align_right">
+                                                    <span class="slds-badge slds-badge_lightest">
+                                                        {item.Menu_Category__r.Name}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <template if:false={hasItems}>
+                        <template if:false={loading}>
+                            <template if:false={hasError}>
+                                <div class="slds-text-align_center slds-m-top_large">
+                                    <lightning-icon icon-name="utility:info" 
+                                                   size="medium" 
+                                                   alternative-text="No items found" 
+                                                   class="slds-icon_container slds-icon-utility-info">
+                                    </lightning-icon>
+                                    <p class="slds-text-body_small slds-m-top_small">No menu items found matching your criteria.</p>
+                                </div>
+                            </template>
+                        </template>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Upload Menu Files">
+        <div class="slds-p-around_medium">
+            <p class="slds-text-body_regular slds-m-bottom_small">
+                Upload one or more menu files (PDF, PNG, JPG).
+            </p>
+            <lightning-file-upload
+                label="Choose Files"
+                name="menuFiles"
+                record-id={uploadRecordId}
+                accept={acceptedFormats}
+                multiple
+                onuploadfinished={handleUploadFinished}
+            ></lightning-file-upload>
+            <template if:true={hasFiles}>
+                <div class="slds-m-top_small">
+                    <p class="slds-text-body_small slds-text-color_success">
+                        {fileCount} file(s) uploaded
+                    </p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

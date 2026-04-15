@@ -4,41 +4,43 @@
   "version": "1.0.0",
   "description": "Salesforce App",
   "scripts": {
+    "apex:test": "mkdir -p testresults && rm testresults/* && sf apex run test --test-level RunLocalTests --output-dir testresults --result-format human --code-coverage",
+    "codeanalyzer:config": "echo 'y' | sf code-analyzer config --include-unmodified-rules --rule-selector all --config-file code-analyzer.yml --output-file code-analyzer.yml",
     "lint": "eslint **/{aura,lwc}/**/*.js",
-    "test": "npm run test:unit",
-    "test:unit": "sfdx-lwc-jest",
-    "test:unit:watch": "sfdx-lwc-jest --watch",
-    "test:unit:debug": "sfdx-lwc-jest --debug",
-    "test:unit:coverage": "sfdx-lwc-jest --coverage",
-    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "myinfo": "sf org display --verbose",
+    "precommit": "lint-staged",
+    "prepare": "husky",
     "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-    "prepare": "husky || true",
-    "precommit": "lint-staged"
+    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "test:unit:coverage": "sfdx-lwc-jest --coverage --skipApiVersionCheck -- --passWithNoTests",
+    "test:unit:debug": "sfdx-lwc-jest --debug --skipApiVersionCheck -- --passWithNoTests",
+    "test:unit:watch": "sfdx-lwc-jest --watch --skipApiVersionCheck -- --passWithNoTests",
+    "test:unit": "sfdx-lwc-jest --skipApiVersionCheck -- --passWithNoTests",
+    "test": "npm run test:unit"
   },
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^3.1.0",
-    "@prettier/plugin-xml": "^3.4.1",
-    "@salesforce/eslint-config-lwc": "^4.0.0",
+    "@prettier/plugin-xml": "^3.4.2",
+    "@salesforce/eslint-config-lwc": "^4.1.2",
     "@salesforce/eslint-plugin-aura": "^3.0.0",
     "@salesforce/eslint-plugin-lightning": "^2.0.0",
-    "@salesforce/sfdx-lwc-jest": "^7.0.2",
+    "@salesforce/sfdx-lwc-jest": "^7.1.2",
+    "@x2od/prettier-config": "^0.0.3",
     "eslint": "^9.29.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jest": "^28.14.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^29.15.2",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.2",
-    "prettier": "^3.5.3",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3",
     "prettier-plugin-apex": "^2.2.6"
   },
   "lint-staged": {
     "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
       "prettier --write"
     ],
-    "**/{aura,lwc}/**/*.js": [
-      "eslint"
-    ],
+    "**/{aura,lwc}/**/*.js": ["eslint"],
     "**/lwc/**": [
-        "sfdx-lwc-jest -- --bail --findRelatedTests --passWithNoTests"
+      "sfdx-lwc-jest -- --bail --findRelatedTests --passWithNoTests"
     ]
   }
 }

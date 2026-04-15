@@ -1,0 +1,134 @@
+Id,Available__c,Calories__c,Description__c,Image_URL__c,LastActivityDate,Menu__c,Menu_Category__c,Name,OwnerId,Price__c
+a03Ws000008XEZ4IAO,true,,Smashed avocado on whole-grain bread with chili flakes.,,,a04Ws000000Jyi1IAC,a02Ws0000052oM1IAI,Avocado Toast,005Ws000003miUrIAI,12
+a03Ws000008XEZ5IAO,true,,Filled with fresh vegetables and served with peanut sauce.,,,a04Ws000000Jyi1IAC,a02Ws0000052oM1IAI,Vegan Spring Rolls,005Ws000003miUrIAI,10
+a03Ws000008XEZ6IAO,true,,"Quinoa, chickpeas, roasted vegetables, and tahini dressing.",,,a04Ws000000Jyi1IAC,a02Ws0000052oM2IAI,Vegan Buddha Bowl,005Ws000003miUrIAI,18
+a03Ws000008XEZ7IAO,true,,Served with sweet potato fries and a side salad.,,,a04Ws000000Jyi1IAC,a02Ws0000052oM2IAI,Plant-Based Burger,005Ws000003miUrIAI,20
+a03Ws000008XEZ8IAO,true,,Chilled chia pudding with almond milk and fresh berries.,,,a04Ws000000Jyi1IAC,a02Ws0000052oM3IAI,Chia Pudding,005Ws000003miUrIAI,8
+a03Ws000008XEZ9IAO,true,,Rich chocolate cake made with plant-based ingredients.,,,a04Ws000000Jyi1IAC,a02Ws0000052oM3IAI,Vegan Chocolate Cake,005Ws000003miUrIAI,9
+a03Ws000008XEZAIA4,true,,"Crispy nachos topped with cheese, jalapenos, and sour cream.",,,a04Ws000000Jyi2IAC,a02Ws0000052oM4IAI,Loaded Nachos,005Ws000003miUrIAI,14
+a03Ws000008XEZBIA4,true,,Warm pretzel bites with a cheesy dipping sauce.,,,a04Ws000000Jyi2IAC,a02Ws0000052oM4IAI,Pretzel Bites,005Ws000003miUrIAI,10
+a03Ws000008XEZCIA4,true,,"Juicy burger with cheddar, lettuce, and tomato.",,,a04Ws000000Jyi2IAC,a02Ws0000052oM5IAI,Classic Cheeseburger,005Ws000003miUrIAI,16
+a03Ws000008XEZDIA4,true,,Served with coleslaw on a brioche bun.,,,a04Ws000000Jyi2IAC,a02Ws0000052oM5IAI,BBQ Pulled Pork Sandwich,005Ws000003miUrIAI,14
+a03Ws000008XEZEIA4,true,,Warm cookie topped with vanilla ice cream.,,,a04Ws000000Jyi2IAC,a02Ws0000052oM6IAI,Chocolate Chip Cookie Skillet,005Ws000003miUrIAI,8
+a03Ws000008XEZFIA4,true,,"Three mini milkshakes in chocolate, vanilla, and strawberry.",,,a04Ws000000Jyi2IAC,a02Ws0000052oM6IAI,Milkshake Trio,005Ws000003miUrIAI,12
+a03Ws000008XEZGIA4,true,,"Bagel with cream cheese, smoked salmon, and capers.",,,a04Ws000000Jyi3IAC,a02Ws0000052oM7IAI,Smoked Salmon Bagel,005Ws000003miUrIAI,14
+a03Ws000008XEZHIA4,true,,"Omelet with mozzarella, tomatoes, and basil.",,,a04Ws000000Jyi3IAC,a02Ws0000052oM7IAI,Caprese Omelet,005Ws000003miUrIAI,12
+a03Ws000008XEZIIA4,true,,Served with a side salad.,,,a04Ws000000Jyi3IAC,a02Ws0000052oM8IAI,Turkey Pesto Panini,005Ws000003miUrIAI,15
+a03Ws000008XEZJIA4,true,,"Whole wheat wrap with hummus, spinach, and roasted veggies.",,,a04Ws000000Jyi3IAC,a02Ws0000052oM8IAI,Veggie Wrap,005Ws000003miUrIAI,13
+a03Ws000008XEZKIA4,true,,Served with a scoop of vanilla ice cream.,,,a04Ws000000Jyi3IAC,a02Ws0000052oM9IAI,Warm Apple Tart,005Ws000003miUrIAI,8
+a03Ws000008XEZLIA4,true,,Flaky croissant filled with rich chocolate.,,,a04Ws000000Jyi3IAC,a02Ws0000052oM9IAI,Chocolate Croissant,005Ws000003miUrIAI,6
+a03Ws000008XEZMIA4,true,,"Crispy bread topped with fresh tomatoes, basil, and balsamic glaze.",,,a04Ws000000Jyi4IAC,a02Ws0000052oMAIAY,Farm Fresh Bruschetta,005Ws000003miUrIAI,10
+a03Ws000008XEZNIA4,true,,Golden fritters served with a spicy aioli.,,,a04Ws000000Jyi4IAC,a02Ws0000052oMAIAY,Sweet Potato Fritters,005Ws000003miUrIAI,12
+a03Ws000008XEZOIA4,true,,Served with roasted vegetables and mashed potatoes.,,,a04Ws000000Jyi4IAC,a02Ws0000052oMBIAY,Herb-Crusted Chicken,005Ws000003miUrIAI,22
+a03Ws000008XEZPIA4,true,,"Quinoa, roasted sweet potatoes, kale, and a citrus dressing.",,,a04Ws000000Jyi4IAC,a02Ws0000052oMBIAY,Quinoa Power Bowl,005Ws000003miUrIAI,18
+a03Ws000008XEZQIA4,true,,Warm apple crumble with a scoop of vanilla ice cream.,,,a04Ws000000Jyi4IAC,a02Ws0000052oMCIAY,Apple Crumble,005Ws000003miUrIAI,8
+a03Ws000008XEZRIA4,true,,Crisp tart filled with fresh seasonal berries.,,,a04Ws000000Jyi4IAC,a02Ws0000052oMCIAY,Seasonal Berry Tart,005Ws000003miUrIAI,9
+a03Ws000008XJ0sIAG,true,,Pan-seared scallops served with a lemon beurre blanc and microgreens.,,,a04Ws000000JyJpIAK,a02Ws0000052lXpIAI,Seared Scallops,005Ws000003miUrIAI,18
+a03Ws000008XJ0tIAG,true,,"Rich and creamy soup made with wild mushrooms, drizzled with truffle oil.",,,a04Ws000000JyJpIAK,a02Ws0000052lXpIAI,Truffle Mushroom Soup,005Ws000003miUrIAI,14
+a03Ws000008XJ0uIAG,true,,Creamy burrata cheese with heirloom tomatoes and a balsamic reduction.,,,a04Ws000000JyJpIAK,a02Ws0000052lXpIAI,Burrata & Heirloom Tomatoes,005Ws000003miUrIAI,15
+a03Ws000008XJ0vIAG,true,,Grilled 8 oz. filet mignon with garlic mashed potatoes and red wine reduction.,,,a04Ws000000JyJpIAK,a02Ws0000052lXqIAI,Filet Mignon,005Ws000003miUrIAI,48
+a03Ws000008XJ0wIAG,true,,Pan-seared Chilean sea bass with wild rice and seasonal vegetables.,,,a04Ws000000JyJpIAK,a02Ws0000052lXqIAI,Seared Sea Bass,005Ws000003miUrIAI,42
+a03Ws000008XJ0xIAG,true,,Creamy Arborio rice with wild mushrooms and parmesan.,,,a04Ws000000JyJpIAK,a02Ws0000052lXqIAI,Wild Mushroom Risotto,005Ws000003miUrIAI,32
+a03Ws000008XJ0yIAG,true,,"Warm chocolate cake with a gooey center, served with vanilla bean ice cream.",,,a04Ws000000JyJpIAK,a02Ws0000052lXrIAI,Chocolate Lava Cake,005Ws000003miUrIAI,12
+a03Ws000008XJ0zIAG,true,,Classic French custard with a caramelized sugar crust and fresh berries.,,,a04Ws000000JyJpIAK,a02Ws0000052lXrIAI,Crème Brûlée,005Ws000003miUrIAI,10
+a03Ws000008XMd3IAG,true,,"Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze.",,,a04Ws000000JyN3IAK,a02Ws0000052m5hIAA,Caprese Salad,005Ws000003miUrIAI,14
+a03Ws000008XMd4IAG,true,,"Portobello mushrooms filled with spinach, ricotta, and breadcrumbs.",,,a04Ws000000JyN3IAK,a02Ws0000052m5hIAA,Stuffed Mushrooms,005Ws000003miUrIAI,12
+a03Ws000008XMd5IAG,true,,12 oz. ribeye steak with roasted potatoes and grilled broccolini.,,,a04Ws000000JyN3IAK,a02Ws0000052m5iIAA,Grilled Ribeye,005Ws000003miUrIAI,42
+a03Ws000008XMd6IAG,true,,"Creamy risotto with wild mushrooms, parmesan, and truffle oil.",,,a04Ws000000JyN3IAK,a02Ws0000052m5iIAA,Wild Mushroom Risotto,005Ws000003miUrIAI,32
+a03Ws000008XMd7IAG,true,,Rich chocolate torte with a hint of espresso and whipped cream.,,,a04Ws000000JyN3IAK,a02Ws0000052m5jIAA,Chocolate Torte,005Ws000003miUrIAI,14
+a03Ws000008XMd8IAG,true,,Three scoops of artisan gelato in classic Italian flavors.,,,a04Ws000000JyN3IAK,a02Ws0000052m5jIAA,Gelato Trio,005Ws000003miUrIAI,12
+a03Ws000008XMd9IAG,true,,Golden crab cakes served with remoulade sauce and a side of fresh greens.,,,a04Ws000000JyN4IAK,a02Ws0000052m5kIAA,Pan-Roasted Crab Cakes,005Ws000003miUrIAI,20
+a03Ws000008XMdAIAW,true,,"Garlic butter shrimp on toasted baguette slices, topped with basil and parmesan.",,,a04Ws000000JyN4IAK,a02Ws0000052m5kIAA,Garlic Shrimp Bruschetta,005Ws000003miUrIAI,15
+a03Ws000008XMdBIAW,true,,Fresh tuna tartare served with wonton crisps and a sesame soy glaze.,,,a04Ws000000JyN4IAK,a02Ws0000052m5kIAA,Ahi Tuna Tartare,005Ws000003miUrIAI,18
+a03Ws000008XMdCIAW,true,,Juicy chicken breast with creamy mashed potatoes and grilled asparagus.,,,a04Ws000000JyN4IAK,a02Ws0000052m5lIAA,Pan-Roasted Chicken,005Ws000003miUrIAI,28
+a03Ws000008XMdDIAW,true,,"House-made ravioli filled with spinach and ricotta, served with marinara sauce.",,,a04Ws000000JyN4IAK,a02Ws0000052m5lIAA,Spinach-Stuffed Ravioli,005Ws000003miUrIAI,24
+a03Ws000008XMdEIAW,true,,Espresso-soaked ladyfingers layered with mascarpone cream.,,,a04Ws000000JyN4IAK,a02Ws0000052m5mIAA,Classic Tiramisu,005Ws000003miUrIAI,12
+a03Ws000008XMdFIAW,true,,Rich chocolate custard with whipped cream and a hint of orange.,,,a04Ws000000JyN4IAK,a02Ws0000052m5mIAA,Chocolate Pot de Crème,005Ws000003miUrIAI,12
+a03Ws000008XMdGIAW,true,,Citrus-marinated shrimp and fish served with avocado and tortilla chips.,,,a04Ws000000JyN5IAK,a02Ws0000052m5nIAA,Fresh Ceviche,005Ws000003miUrIAI,18
+a03Ws000008XMdHIAW,true,,"Crispy flatbread topped with caramelized onions, prosciutto, and arugula.",,,a04Ws000000JyN5IAK,a02Ws0000052m5nIAA,Artisan Flatbread,005Ws000003miUrIAI,16
+a03Ws000008XMdIIAW,true,,Linguine tossed in a Cajun cream sauce with blackened shrimp and fresh herbs.,,,a04Ws000000JyN5IAK,a02Ws0000052m5oIAA,Blackened Shrimp Pasta,005Ws000003miUrIAI,30
+a03Ws000008XMdJIAW,true,,"Grilled salmon, avocado crema, and mango salsa in warm corn tortillas.",,,a04Ws000000JyN5IAK,a02Ws0000052m5oIAA,Grilled Salmon Tacos,005Ws000003miUrIAI,26
+a03Ws000008XMdKIAW,true,,Classic cheesecake with a raspberry swirl and graham cracker crust.,,,a04Ws000000JyN5IAK,a02Ws0000052m5pIAA,Deep Ellum Cheesecake,005Ws000003miUrIAI,14
+a03Ws000008XMdLIAW,true,,"Bananas sautéed in rum and brown sugar, served over vanilla ice cream.",,,a04Ws000000JyN5IAK,a02Ws0000052m5pIAA,Fried Banana Foster,005Ws000003miUrIAI,14
+a03Ws000008XS0xIAG,true,,"Diced tuna with avocado, spicy mayo, and wonton crisps.",,,a04Ws000000JygPIAS,a02Ws0000052oCLIAY,Spicy Tuna Tartare,005Ws000003miUrIAI,14
+a03Ws000008XS0yIAG,true,,Crispy chicken wings tossed in a tangy Korean BBQ sauce.,,,a04Ws000000JygPIAS,a02Ws0000052oCLIAY,Korean BBQ Wings,005Ws000003miUrIAI,12
+a03Ws000008XS0zIAG,true,,"Pork belly, soft-boiled egg, and scallions in a rich miso broth.",,,a04Ws000000JygPIAS,a02Ws0000052oCMIAY,Japanese Ramen,005Ws000003miUrIAI,16
+a03Ws000008XS10IAG,true,,Creamy tomato-based curry served with basmati rice.,,,a04Ws000000JygPIAS,a02Ws0000052oCMIAY,Indian Butter Chicken,005Ws000003miUrIAI,18
+a03Ws000008XS11IAG,true,,"Turkey, avocado, bacon, lettuce, and tomato on artisan bread.",,,a04Ws000000JygQIAS,a02Ws0000052oCNIAY,Turkey Avocado Club,005Ws000003miUrIAI,12
+a03Ws000008XS12IAG,true,,"Ham, salami, and provolone with lettuce, tomato, and Italian dressing.",,,a04Ws000000JygQIAS,a02Ws0000052oCNIAY,Italian Hoagie,005Ws000003miUrIAI,11
+a03Ws000008XS13IAG,true,,"Rich tomato soup with fresh basil, served with crackers.",,,a04Ws000000JygQIAS,a02Ws0000052oCOIAY,Creamy Tomato Basil Soup,005Ws000003miUrIAI,8
+a03Ws000008XS14IAG,true,,Classic chicken noodle soup with a hearty broth.,,,a04Ws000000JygQIAS,a02Ws0000052oCOIAY,Chicken Noodle Soup,005Ws000003miUrIAI,8
+a03Ws000008XS15IAG,true,,Rich lobster bisque with a hint of sherry.,,,a04Ws000000JygRIAS,a02Ws0000052oCPIAY,Lobster Bisque,005Ws000003miUrIAI,18
+a03Ws000008XS16IAG,true,,"Mixed greens with duck confit, candied walnuts, and a raspberry vinaigrette.",,,a04Ws000000JygRIAS,a02Ws0000052oCPIAY,Duck Confit Salad,005Ws000003miUrIAI,20
+a03Ws000008XS17IAG,true,,Seared scallops on a bed of saffron risotto.,,,a04Ws000000JygRIAS,a02Ws0000052oCQIAY,Seared Scallops,005Ws000003miUrIAI,38
+a03Ws000008XS18IAG,true,,Slow-braised short ribs served with creamy polenta.,,,a04Ws000000JygRIAS,a02Ws0000052oCQIAY,Braised Short Ribs,005Ws000003miUrIAI,36
+a03Ws000008XS19IAG,true,,8 oz filet served with garlic mashed potatoes and asparagus.,,,a04Ws000000JygSIAS,a02Ws0000052oCRIAY,Filet Mignon,005Ws000003miUrIAI,52
+a03Ws000008XS1AIAW,true,,"12 oz ribeye grilled to perfection, served with seasonal vegetables.",,,a04Ws000000JygSIAS,a02Ws0000052oCRIAY,Ribeye Steak,005Ws000003miUrIAI,48
+a03Ws000008XS1BIAW,true,,Fresh Atlantic salmon served with a dill cream sauce.,,,a04Ws000000JygSIAS,a02Ws0000052oCSIAY,Grilled Salmon,005Ws000003miUrIAI,36
+a03Ws000008XS1CIAW,true,,Pan-seared scallops served with a saffron risotto.,,,a04Ws000000JygSIAS,a02Ws0000052oCSIAY,Seared Scallops,005Ws000003miUrIAI,42
+a03Ws000008XS1DIAW,true,,"Crispy fried chicken served atop a fluffy waffle, drizzled with maple syrup.",,,a04Ws000000JygTIAS,a02Ws0000052oCTIAY,Chicken and Waffles,005Ws000003miUrIAI,16
+a03Ws000008XS1EIAW,true,,"Ground beef, peas, and carrots topped with creamy mashed potatoes.",,,a04Ws000000JygTIAS,a02Ws0000052oCTIAY,Shepherd’s Pie,005Ws000003miUrIAI,14
+a03Ws000008XS1FIAW,true,,Tender short ribs served with roasted root vegetables.,,,a04Ws000000JygTIAS,a02Ws0000052oCUIAY,Braised Short Ribs,005Ws000003miUrIAI,24
+a03Ws000008XS1GIAW,true,,"Salmon fillet with a lemon butter sauce, served with asparagus.",,,a04Ws000000JygTIAS,a02Ws0000052oCUIAY,Grilled Salmon,005Ws000003miUrIAI,22
+a03Ws000008XUifIAG,true,,Golden fried chicken served with a side of coleslaw.,,,a04Ws000000Jyq5IAC,a02Ws0000052p6nIAA,Crispy Fried Chicken,005Ws000003miUrIAI,16
+a03Ws000008XUigIAG,true,,A selection of freshly prepared sushi rolls.,,,a04Ws000000Jyq5IAC,a02Ws0000052p6nIAA,Sushi Rolls,005Ws000003miUrIAI,18
+a03Ws000008XUihIAG,true,,Juicy burger with cheddar cheese and special sauce.,,,a04Ws000000Jyq5IAC,a02Ws0000052p6oIAA,Skyline Burger,005Ws000003miUrIAI,14
+a03Ws000008XUiiIAG,true,,"Whole wheat wrap with hummus, spinach, and roasted vegetables.",,,a04Ws000000Jyq5IAC,a02Ws0000052p6oIAA,Veggie Wrap,005Ws000003miUrIAI,13
+a03Ws000008XUijIAG,true,,Warm apple tart served with a scoop of vanilla ice cream.,,,a04Ws000000Jyq5IAC,a02Ws0000052p6pIAA,Warm Apple Tart,005Ws000003miUrIAI,8
+a03Ws000008XUikIAG,true,,Flaky croissant filled with rich chocolate.,,,a04Ws000000Jyq5IAC,a02Ws0000052p6pIAA,Chocolate Croissant,005Ws000003miUrIAI,6
+a03Ws000008XUilIAG,true,,Handcrafted tacos with your choice of fillings.,,,a04Ws000000Jyq6IAC,a02Ws0000052p6qIAA,Artisan Tacos,005Ws000003miUrIAI,14
+a03Ws000008XUimIAG,true,,"Crispy fries topped with cheese, bacon, and green onions.",,,a04Ws000000Jyq6IAC,a02Ws0000052p6qIAA,Loaded Fries,005Ws000003miUrIAI,12
+a03Ws000008XUinIAG,true,,Fresh pasta with your choice of marinara or Alfredo sauce.,,,a04Ws000000Jyq6IAC,a02Ws0000052p6rIAA,Handcrafted Pasta,005Ws000003miUrIAI,18
+a03Ws000008XUioIAG,true,,Marinated chicken breast served on a toasted bun.,,,a04Ws000000Jyq6IAC,a02Ws0000052p6rIAA,Grilled Chicken Sandwich,005Ws000003miUrIAI,16
+a03Ws000008XUipIAG,true,,"A trio of milkshakes: chocolate, vanilla, and strawberry.",,,a04Ws000000Jyq6IAC,a02Ws0000052p6sIAA,Milkshake Trio,005Ws000003miUrIAI,12
+a03Ws000008XUiqIAG,true,,Warm cookie topped with vanilla ice cream.,,,a04Ws000000Jyq6IAC,a02Ws0000052p6sIAA,Chocolate Chip Cookie Skillet,005Ws000003miUrIAI,8
+a03Ws000008XUirIAG,true,,Mixed greens topped with duck confit and candied walnuts.,,,a04Ws000000Jyq7IAC,a02Ws0000052p6tIAA,Duck Confit Salad,005Ws000003miUrIAI,22
+a03Ws000008XUisIAG,true,,Creamy lobster bisque with a hint of sherry.,,,a04Ws000000Jyq7IAC,a02Ws0000052p6tIAA,Lobster Bisque,005Ws000003miUrIAI,18
+a03Ws000008XUitIAG,true,,Pan-seared scallops served over a saffron risotto.,,,a04Ws000000Jyq7IAC,a02Ws0000052p6uIAA,Seared Scallops,005Ws000003miUrIAI,38
+a03Ws000008XUiuIAG,true,,8 oz filet served with garlic mashed potatoes and asparagus.,,,a04Ws000000Jyq7IAC,a02Ws0000052p6uIAA,Filet Mignon,005Ws000003miUrIAI,48
+a03Ws000008XUivIAG,true,,Rich molten chocolate cake with fresh berries.,,,a04Ws000000Jyq7IAC,a02Ws0000052p6vIAA,Chocolate Fondant,005Ws000003miUrIAI,14
+a03Ws000008XUiwIAG,true,,Espresso-soaked ladyfingers layered with mascarpone.,,,a04Ws000000Jyq7IAC,a02Ws0000052p6vIAA,Classic Tiramisu,005Ws000003miUrIAI,12
+a03Ws000008XUixIAG,true,,Seared scallops served with a lemon butter sauce.,,,a04Ws000000Jyq8IAC,a02Ws0000052p6wIAA,Pan-Seared Scallops,005Ws000003miUrIAI,20
+a03Ws000008XUiyIAG,true,,A selection of fine cheeses served with crackers and fresh fruit.,,,a04Ws000000Jyq8IAC,a02Ws0000052p6wIAA,Artisan Cheese Board,005Ws000003miUrIAI,18
+a03Ws000008XUizIAG,true,,Tender short ribs served with creamy mashed potatoes.,,,a04Ws000000Jyq8IAC,a02Ws0000052p6xIAA,Braised Short Ribs,005Ws000003miUrIAI,36
+a03Ws000008XUj0IAG,true,,Fresh salmon filet served with roasted seasonal vegetables.,,,a04Ws000000Jyq8IAC,a02Ws0000052p6xIAA,Pan-Seared Salmon,005Ws000003miUrIAI,32
+a03Ws000008XUj1IAG,true,,Decadent chocolate tart with a whipped cream topping.,,,a04Ws000000Jyq8IAC,a02Ws0000052p6yIAA,Rich Chocolate Tart,005Ws000003miUrIAI,14
+a03Ws000008XUj2IAG,true,,Classic crème brûlée with a caramelized sugar crust.,,,a04Ws000000Jyq8IAC,a02Ws0000052p6yIAA,Vanilla Bean Crème Brûlée,005Ws000003miUrIAI,12
+a03Ws000008Xm2rIAC,true,,Crispy fried pickles served with a spicy ranch dip.,,,a04Ws000000JzJ7IAK,a02Ws0000052uMbIAI,Fried Pickles,005Ws000003miUrIAI,8
+a03Ws000008Xm2sIAC,true,,Golden-fried mozzarella sticks with marinara sauce.,,,a04Ws000000JzJ7IAK,a02Ws0000052uMbIAI,Mozzarella Sticks,005Ws000003miUrIAI,10
+a03Ws000008Xm2tIAC,true,,Crispy fried chicken served with macaroni and cheese.,,,a04Ws000000JzJ7IAK,a02Ws0000052uMcIAI,Fried Chicken,005Ws000003miUrIAI,16
+a03Ws000008Xm2uIAC,true,,Classic pot pie filled with slow-cooked beef and vegetables.,,,a04Ws000000JzJ7IAK,a02Ws0000052uMcIAI,Beef Pot Pie,005Ws000003miUrIAI,18
+a03Ws000008Xm2vIAC,true,,Warm peach cobbler topped with vanilla ice cream.,,,a04Ws000000JzJ7IAK,a02Ws0000052uMdIAI,Southern Peach Cobbler,005Ws000003miUrIAI,10
+a03Ws000008Xm2wIAC,true,,Fudgy brownie topped with ice cream and chocolate syrup.,,,a04Ws000000JzJ7IAK,a02Ws0000052uMdIAI,Chocolate Brownie Sundae,005Ws000003miUrIAI,12
+a03Ws000008Xm2xIAC,true,,"Baked potato loaded with cheese, bacon, and sour cream.",,,a04Ws000000JzJ8IAK,a02Ws0000052uMeIAI,Loaded Baked Potato,005Ws000003miUrIAI,10
+a03Ws000008Xm2yIAC,true,,Mini sliders with tender braised beef and coleslaw.,,,a04Ws000000JzJ8IAK,a02Ws0000052uMeIAI,Braised Beef Sliders,005Ws000003miUrIAI,14
+a03Ws000008Xm2zIAC,true,,Slow-cooked brisket served with mashed potatoes and gravy.,,,a04Ws000000JzJ8IAK,a02Ws0000052uMfIAI,Braised Beef Brisket,005Ws000003miUrIAI,22
+a03Ws000008Xm30IAC,true,,Classic pot pie with a flaky crust.,,,a04Ws000000JzJ8IAK,a02Ws0000052uMfIAI,Chicken Pot Pie,005Ws000003miUrIAI,18
+a03Ws000008Xm31IAC,true,,Rich bread pudding topped with a caramel sauce.,,,a04Ws000000JzJ8IAK,a02Ws0000052uMgIAI,Bread Pudding,005Ws000003miUrIAI,10
+a03Ws000008Xm32IAC,true,,Southern-style pecan pie with whipped cream.,,,a04Ws000000JzJ8IAK,a02Ws0000052uMgIAI,Pecan Pie,005Ws000003miUrIAI,8
+a03Ws000008Xm33IAC,true,,"Tacos filled with spicy shrimp, lettuce, and avocado.",,,a04Ws000000JzJ9IAK,a02Ws0000052uMhIAI,Spicy Shrimp Tacos,005Ws000003miUrIAI,16
+a03Ws000008Xm34IAC,true,,Vietnamese-style sandwich with pickled vegetables and pork.,,,a04Ws000000JzJ9IAK,a02Ws0000052uMhIAI,Banh Mi Sandwich,005Ws000003miUrIAI,14
+a03Ws000008Xm35IAC,true,,"Rice bowl topped with grilled chicken, teriyaki sauce, and vegetables.",,,a04Ws000000JzJ9IAK,a02Ws0000052uMiIAI,Japanese Rice Bowl,005Ws000003miUrIAI,18
+a03Ws000008Xm36IAC,true,,"Beef marinated in Korean BBQ sauce, served with rice and kimchi.",,,a04Ws000000JzJ9IAK,a02Ws0000052uMiIAI,Korean BBQ Beef,005Ws000003miUrIAI,24
+a03Ws000008Xm37IAC,true,,Creamy panna cotta infused with coconut milk.,,,a04Ws000000JzJ9IAK,a02Ws0000052uMjIAI,Coconut Panna Cotta,005Ws000003miUrIAI,9
+a03Ws000008Xm38IAC,true,,Homemade black sesame ice cream with a hint of honey.,,,a04Ws000000JzJ9IAK,a02Ws0000052uMjIAI,Black Sesame Ice Cream,005Ws000003miUrIAI,8
+a03Ws000008Xm39IAC,true,,"Salmon with a miso glaze, served with pickled cucumbers.",,,a04Ws000000JzJAIA0,a02Ws0000052uMkIAI,Miso-Glazed Salmon,005Ws000003miUrIAI,22
+a03Ws000008Xm3AIAS,true,,"Flatbread topped with tikka masala sauce, chicken, and cilantro.",,,a04Ws000000JzJAIA0,a02Ws0000052uMkIAI,Tikka Masala Flatbread,005Ws000003miUrIAI,18
+a03Ws000008Xm3BIAS,true,,"Chicken breast crusted with sesame seeds, served with stir-fried vegetables.",,,a04Ws000000JzJAIA0,a02Ws0000052uMlIAI,Sesame-Crusted Chicken,005Ws000003miUrIAI,26
+a03Ws000008Xm3CIAS,true,,"Rice with a blend of Asian spices, shrimp, and vegetables.",,,a04Ws000000JzJAIA0,a02Ws0000052uMlIAI,Fusion Fried Rice,005Ws000003miUrIAI,20
+a03Ws000008Xm3DIAS,true,,Cheesecake infused with matcha green tea.,,,a04Ws000000JzJAIA0,a02Ws0000052uMmIAI,Matcha Cheesecake,005Ws000003miUrIAI,10
+a03Ws000008Xm3EIAS,true,,Sweet sticky rice with fresh mango slices.,,,a04Ws000000JzJAIA0,a02Ws0000052uMmIAI,Mango Sticky Rice,005Ws000003miUrIAI,8
+a03Ws000008Y8PyIAK,true,,Golden crab cakes with a tangy remoulade sauce.,,,a04Ws000000JzpNIAS,a02Ws00000530iBIAQ,Crab Cakes,005Ws000003miUrIAI,12
+a03Ws000008Y8PzIAK,true,,"Crisp romaine, parmesan, and croutons tossed in Caesar dressing.",,,a04Ws000000JzpNIAS,a02Ws00000530iBIAQ,Caesar Salad,005Ws000003miUrIAI,10
+a03Ws000008Y8Q0IAK,true,,"Mixed greens, grilled chicken, cherry tomatoes, and ranch dressing.",,,a04Ws000000JzpNIAS,a02Ws00000530iCIAQ,Grilled Chicken Salad,005Ws000003miUrIAI,14
+a03Ws000008Y8Q1IAK,true,,"Baby spinach, strawberries, goat cheese, and a balsamic glaze.",,,a04Ws000000JzpNIAS,a02Ws00000530iCIAQ,Spinach Strawberry Salad,005Ws000003miUrIAI,12
+a03Ws000008Y8Q2IAK,true,,"Bacon, lettuce, and tomato on toasted sourdough.",,,a04Ws000000JzpNIAS,a02Ws00000530iDIAQ,Classic BLT,005Ws000003miUrIAI,12
+a03Ws000008Y8Q3IAK,true,,"Shaved steak, onions, peppers, and provolone on a hoagie roll.",,,a04Ws000000JzpNIAS,a02Ws00000530iDIAQ,Philly Cheesesteak,005Ws000003miUrIAI,15
+a03Ws000008Y8Q4IAK,true,,Warm cookie served with a glass of milk.,,,a04Ws000000JzpNIAS,a02Ws00000530iEIAQ,Chocolate Chip Cookie,005Ws000003miUrIAI,5
+a03Ws000008Y8Q5IAK,true,,A creamy tomato soup with fresh basil and a drizzle of olive oil.,,,a04Ws000000JzpOIAS,a02Ws00000530iFIAQ,Tomato Basil Soup,005Ws000003miUrIAI,8
+a03Ws000008Y8Q6IAK,true,,"Mixed greens, cherry tomatoes, cucumbers, and a balsamic vinaigrette.",,,a04Ws000000JzpOIAS,a02Ws00000530iFIAQ,House Salad,005Ws000003miUrIAI,10
+a03Ws000008Y8Q7IAK,true,,"Romaine lettuce, grilled chicken, bacon, avocado, and blue cheese.",,,a04Ws000000JzpOIAS,a02Ws00000530iGIAQ,Cobb Salad,005Ws000003miUrIAI,15
+a03Ws000008Y8Q8IAK,true,,"Mixed greens with mandarin oranges, sesame seeds, and a ginger dressing.",,,a04Ws000000JzpOIAS,a02Ws00000530iGIAQ,Asian Sesame Salad,005Ws000003miUrIAI,14
+a03Ws000008Y8Q9IAK,true,,"Sliced turkey, avocado, and lettuce on whole wheat bread.",,,a04Ws000000JzpOIAS,a02Ws00000530iHIAQ,Turkey Avocado Sandwich,005Ws000003miUrIAI,14
+a03Ws000008Y8QAIA0,true,,"Mozzarella, tomatoes, and pesto on ciabatta bread.",,,a04Ws000000JzpOIAS,a02Ws00000530iHIAQ,Caprese Panini,005Ws000003miUrIAI,13
+a03Ws000008Y8QBIA0,true,,Individual cheesecake topped with fresh berries.,,,a04Ws000000JzpOIAS,a02Ws00000530iIIAQ,Mini Cheesecake,005Ws000003miUrIAI,6
