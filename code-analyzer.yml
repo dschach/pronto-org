@@ -31,8 +31,9 @@ log_level: 4
 #     - "**/node_modules/**"
 #     - "**/*.test.js"
 # -------------------------------------------
-ignores:
-  files: []
+ignores: # Modified from: {"files":[]}
+  files:
+    - '**/staticresources/**'
 
 # Rule override settings of the format rules.{engine_name}.{rule_name}.{property_name} = {override_value} where:
 #   {engine_name} is the name of the engine containing the rule that you want to override.
@@ -561,661 +562,6 @@ rules:
         - LWC
         - ErrorProne
         - JavaScript
-    "@typescript-eslint/adjacent-overload-signatures":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/array-type":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/await-thenable":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/ban-ts-comment":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/ban-tslint-comment":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/class-literal-property-style":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/class-methods-use-this":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/consistent-generic-constructors":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/consistent-indexed-object-style":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/consistent-return":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/consistent-type-assertions":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/consistent-type-definitions":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/consistent-type-exports":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/consistent-type-imports":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/default-param-last":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/dot-notation":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/explicit-function-return-type":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/explicit-member-accessibility":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/explicit-module-boundary-types":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/init-declarations":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/max-params":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/member-ordering":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/method-signature-style":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/naming-convention":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-array-constructor":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-array-delete":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-base-to-string":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-confusing-non-null-assertion":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-confusing-void-expression":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-deprecated":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-dupe-class-members":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-duplicate-enum-values":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-duplicate-type-constituents":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-dynamic-delete":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-empty-function":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-empty-object-type":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-explicit-any":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-extra-non-null-assertion":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-extraneous-class":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-floating-promises":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-for-in-array":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-implied-eval":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-import-type-side-effects":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-inferrable-types":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-invalid-this":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-invalid-void-type":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-loop-func":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-magic-numbers":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-meaningless-void-operator":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-misused-new":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-misused-promises":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-misused-spread":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-mixed-enums":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-namespace":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-non-null-asserted-nullish-coalescing":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-non-null-asserted-optional-chain":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-non-null-assertion":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-redeclare":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-redundant-type-constituents":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-require-imports":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-restricted-imports":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-restricted-types":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-shadow":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-this-alias":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-condition":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-parameter-property-assignment":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-qualifier":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-template-expression":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-type-arguments":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-type-assertion":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-type-constraint":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-type-conversion":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unnecessary-type-parameters":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-argument":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-assignment":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-call":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-declaration-merging":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-enum-comparison":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unsafe-function-type":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-member-access":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-return":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-type-assertion":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unsafe-unary-minus":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unused-expressions":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-unused-private-class-members":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-unused-vars":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-use-before-define":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-useless-constructor":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/no-useless-default-assignment":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-useless-empty-export":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/no-wrapper-object-types":
-      severity: 2
-      tags:
-        - Recommended
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/non-nullable-type-assertion-style":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/only-throw-error":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/parameter-properties":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/prefer-as-const":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-destructuring":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-enum-initializers":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-find":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-for-of":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-function-type":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-includes":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-literal-enum-member":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-namespace-keyword":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-nullish-coalescing":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-optional-chain":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-promise-reject-errors":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-readonly":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-readonly-parameter-types":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-reduce-type-parameter":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/prefer-regexp-exec":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-return-this-type":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/prefer-string-starts-ends-with":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/promise-function-async":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/related-getter-setter-pairs":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/require-array-sort-compare":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/require-await":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/restrict-plus-operands":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/restrict-template-expressions":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/return-await":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/strict-boolean-expressions":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/strict-void-return":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/switch-exhaustiveness-check":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/triple-slash-reference":
-      severity: 3
-      tags:
-        - Recommended
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/unbound-method":
-      severity: 2
-      tags:
-        - ErrorProne
-        - TypeScript
-    "@typescript-eslint/unified-signatures":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
-    "@typescript-eslint/use-unknown-in-catch-callback-variable":
-      severity: 3
-      tags:
-        - BestPractices
-        - TypeScript
     "accessor-pairs":
       severity: 3
       tags:
@@ -1534,285 +880,6 @@ rules:
         - LWC
         - BestPractices
         - JavaScript
-    "jsx-a11y/alt-text":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/anchor-has-content":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/anchor-is-valid":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/aria-activedescendant-has-tabindex":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/aria-props":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/aria-proptypes":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/aria-role":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/aria-unsupported-elements":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/autocomplete-valid":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/click-events-have-key-events":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/heading-has-content":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/html-has-lang":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/iframe-has-title":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/img-redundant-alt":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/interactive-supports-focus":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/label-has-associated-control":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/media-has-caption":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/mouse-events-have-key-events":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-access-key":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-autofocus":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-distracting-elements":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-interactive-element-to-noninteractive-role":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-noninteractive-element-interactions":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-noninteractive-element-to-interactive-role":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-noninteractive-tabindex":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-redundant-roles":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/no-static-element-interactions":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/role-has-required-aria-props":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/role-supports-aria-props":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/scope":
-      severity: 3
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "jsx-a11y/tabindex-no-positive":
-      severity: 2
-      tags:
-        - Recommended
-        - A11y
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
     "logical-assignment-operators":
       severity: 3
       tags:
@@ -2779,734 +1846,6 @@ rules:
         - BestPractices
         - JavaScript
         - TypeScript
-    "react-hooks/exhaustive-deps":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react-hooks/rules-of-hooks":
-      severity: 2
-      tags:
-        - Recommended
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/boolean-prop-naming":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/button-has-type":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/checked-requires-onchange-or-readonly":
-      severity: 3
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/default-props-match-prop-types":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/destructuring-assignment":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/display-name":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/forbid-component-props":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/forbid-dom-props":
-      severity: 3
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/forbid-elements":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/forbid-foreign-prop-types":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/forbid-prop-types":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/forward-ref-uses-ref":
-      severity: 4
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/function-component-definition":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/hook-use-state":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/iframe-missing-sandbox":
-      severity: 2
-      tags:
-        - React
-        - Security
-        - JavaScript
-        - TypeScript
-    "react/jsx-boolean-value":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-child-element-spacing":
-      severity: 4
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/jsx-closing-bracket-location":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-closing-tag-location":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-curly-brace-presence":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-curly-newline":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-curly-spacing":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-equals-spacing":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-filename-extension":
-      severity: 3
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/jsx-first-prop-new-line":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-fragments":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-handler-names":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-indent":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-indent-props":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-key":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/jsx-max-depth":
-      severity: 2
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/jsx-max-props-per-line":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-newline":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-bind":
-      severity: 3
-      tags:
-        - React
-        - Performance
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-comment-textnodes":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-constructed-context-values":
-      severity: 2
-      tags:
-        - React
-        - Performance
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-duplicate-props":
-      severity: 2
-      tags:
-        - Recommended
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-leaked-render":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-literals":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-script-url":
-      severity: 2
-      tags:
-        - React
-        - Security
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-target-blank":
-      severity: 2
-      tags:
-        - Recommended
-        - React
-        - Security
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-undef":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/jsx-no-useless-fragment":
-      severity: 4
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/jsx-one-expression-per-line":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-pascal-case":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-props-no-multi-spaces":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-props-no-spread-multi":
-      severity: 3
-      tags:
-        - React
-        - Performance
-        - JavaScript
-        - TypeScript
-    "react/jsx-props-no-spreading":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-sort-props":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-tag-spacing":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/jsx-uses-vars":
-      severity: 4
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/jsx-wrap-multilines":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/no-access-state-in-setstate":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-adjacent-inline-elements":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/no-array-index-key":
-      severity: 3
-      tags:
-        - React
-        - Performance
-        - JavaScript
-        - TypeScript
-    "react/no-arrow-function-lifecycle":
-      severity: 3
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/no-children-prop":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/no-danger":
-      severity: 2
-      tags:
-        - React
-        - Security
-        - JavaScript
-        - TypeScript
-    "react/no-danger-with-children":
-      severity: 2
-      tags:
-        - Recommended
-        - React
-        - Security
-        - JavaScript
-        - TypeScript
-    "react/no-deprecated":
-      severity: 4
-      tags:
-        - Recommended
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/no-did-mount-set-state":
-      severity: 3
-      tags:
-        - React
-        - Performance
-        - JavaScript
-        - TypeScript
-    "react/no-did-update-set-state":
-      severity: 3
-      tags:
-        - React
-        - Performance
-        - JavaScript
-        - TypeScript
-    "react/no-direct-mutation-state":
-      severity: 2
-      tags:
-        - Recommended
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-find-dom-node":
-      severity: 2
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/no-invalid-html-attribute":
-      severity: 4
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-is-mounted":
-      severity: 2
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/no-multi-comp":
-      severity: 4
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/no-namespace":
-      severity: 2
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-object-type-as-default-prop":
-      severity: 3
-      tags:
-        - React
-        - Performance
-        - JavaScript
-        - TypeScript
-    "react/no-redundant-should-component-update":
-      severity: 4
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/no-render-return-value":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/no-set-state":
-      severity: 4
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/no-string-refs":
-      severity: 4
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/no-this-in-sfc":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-typos":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-unescaped-entities":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-unknown-property":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-unsafe":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-unstable-nested-components":
-      severity: 4
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/no-unused-class-component-methods":
-      severity: 4
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/no-unused-prop-types":
-      severity: 4
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/no-unused-state":
-      severity: 4
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/no-will-update-set-state":
-      severity: 3
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/prefer-es6-class":
-      severity: 3
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/prefer-exact-props":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/prefer-read-only-props":
-      severity: 3
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/prefer-stateless-function":
-      severity: 4
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/prop-types":
-      severity: 3
-      tags:
-        - Recommended
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/require-default-props":
-      severity: 3
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/require-optimization":
-      severity: 3
-      tags:
-        - React
-        - Performance
-        - JavaScript
-        - TypeScript
-    "react/require-render-return":
-      severity: 2
-      tags:
-        - Recommended
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
-    "react/self-closing-comp":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/sort-comp":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/sort-default-props":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/sort-prop-types":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/state-in-constructor":
-      severity: 4
-      tags:
-        - React
-        - CodeStyle
-        - JavaScript
-        - TypeScript
-    "react/static-property-placement":
-      severity: 4
-      tags:
-        - React
-        - Design
-        - JavaScript
-        - TypeScript
-    "react/style-prop-object":
-      severity: 4
-      tags:
-        - React
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "react/void-dom-elements-no-children":
-      severity: 3
-      tags:
-        - React
-        - ErrorProne
-        - JavaScript
-        - TypeScript
     "require-atomic-updates":
       severity: 2
       tags:
@@ -3532,12 +1871,6 @@ rules:
         - JavaScript
         - TypeScript
     "sort-imports":
-      severity: 3
-      tags:
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "sort-keys":
       severity: 3
       tags:
         - BestPractices
@@ -3581,18 +1914,26 @@ rules:
         - ErrorProne
         - JavaScript
         - TypeScript
-    "vars-on-top":
-      severity: 3
-      tags:
-        - BestPractices
-        - JavaScript
-        - TypeScript
     "yoda":
       severity: 3
       tags:
         - BestPractices
         - JavaScript
         - TypeScript
+    "vars-on-top":
+      severity: 3
+      tags:
+        - BestPractices
+        - JavaScript
+        - TypeScript
+      disabled: true # Modified from: false
+    "sort-keys":
+      severity: 3
+      tags:
+        - BestPractices
+        - JavaScript
+        - TypeScript
+      disabled: true # Modified from: false
 
   # ======================================================================
   # FLOW ENGINE RULE OVERRIDES
@@ -3686,48 +2027,16 @@ rules:
         - XML
 
   # ======================================================================
-  # CPD ENGINE RULE OVERRIDES
-  # ======================================================================
-  cpd:
-    "DetectCopyPasteForApex":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Apex
-    "DetectCopyPasteForHtml":
-      severity: 5
-      tags:
-        - Design
-        - Html
-    "DetectCopyPasteForJavascript":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Javascript
-    "DetectCopyPasteForTypescript":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Typescript
-    "DetectCopyPasteForVisualforce":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Visualforce
-    "DetectCopyPasteForXml":
-      severity: 5
-      tags:
-        - Design
-        - Xml
-
-  # ======================================================================
   # PMD ENGINE RULE OVERRIDES
   # ======================================================================
   pmd:
+    "AltTextOnImages":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Visualforce
+        - Custom
     "AnnotationsNamingConventions":
       severity: 4
       tags:
@@ -3746,11 +2055,12 @@ rules:
         - Security
         - Apex
     "ApexCRUDViolation":
-      severity: 2
-      tags:
+      severity: 3 # Modified from: 2
+      tags: # Modified from: ["Recommended","Security","Apex"]
         - Recommended
         - Security
         - Apex
+        - dschachPMDRuleset
     "ApexCSRF":
       severity: 1
       tags:
@@ -3764,11 +2074,12 @@ rules:
         - Security
         - Apex
     "ApexDoc":
-      severity: 4
-      tags:
+      severity: 3 # Modified from: 4
+      tags: # Modified from: ["Recommended","Documentation","Apex"]
         - Recommended
         - Documentation
         - Apex
+        - dschachPMDRuleset
     "ApexInsecureEndpoint":
       severity: 2
       tags:
@@ -3801,10 +2112,11 @@ rules:
         - Apex
     "ApexUnitTestClassShouldHaveAsserts":
       severity: 3
-      tags:
+      tags: # Modified from: ["Recommended","BestPractices","Apex"]
         - Recommended
         - BestPractices
         - Apex
+        - dschachPMDRuleset
     "ApexUnitTestClassShouldHaveRunAs":
       severity: 4
       tags:
@@ -3818,11 +2130,12 @@ rules:
         - BestPractices
         - Apex
     "ApexUnitTestShouldNotUseSeeAllDataTrue":
-      severity: 2
-      tags:
+      severity: 3 # Modified from: 2
+      tags: # Modified from: ["Recommended","BestPractices","Apex"]
         - Recommended
         - BestPractices
         - Apex
+        - dschachPMDRuleset
     "ApexXSSFromEscapeFalse":
       severity: 2
       tags:
@@ -3837,9 +2150,10 @@ rules:
         - Apex
     "AssignmentInOperand":
       severity: 3
-      tags:
+      tags: # Modified from: ["CodeStyle","JavaScript"]
         - CodeStyle
         - JavaScript
+        - dschachPMDRuleset
     "AvoidApiSessionId":
       severity: 2
       tags:
@@ -3877,16 +2191,18 @@ rules:
         - Visualforce
     "AvoidDebugStatements":
       severity: 4
-      tags:
+      tags: # Modified from: ["Recommended","Performance","Apex"]
         - Recommended
         - Performance
         - Apex
+        - dschachPMDRuleset
     "AvoidDeeplyNestedIfStmts":
       severity: 3
-      tags:
+      tags: # Modified from: ["Recommended","Design","Apex"]
         - Recommended
         - Design
         - Apex
+        - dschachPMDRuleset
     "AvoidDirectAccessTriggerMap":
       severity: 3
       tags:
@@ -4037,11 +2353,12 @@ rules:
         - ErrorProne
         - Apex
     "AvoidNonRestrictiveQueries":
-      severity: 4
-      tags:
+      severity: 3 # Modified from: 4
+      tags: # Modified from: ["Recommended","Performance","Apex"]
         - Recommended
         - Performance
         - Apex
+        - dschachPMDRuleset
     "AvoidSControls":
       severity: 1
       tags:
@@ -4062,9 +2379,10 @@ rules:
         - Apex
     "AvoidTrailingComma":
       severity: 2
-      tags:
+      tags: # Modified from: ["ErrorProne","JavaScript"]
         - ErrorProne
         - JavaScript
+        - dschachPMDRuleset
     "AvoidUnauthorizedApiSessionIdInApex":
       severity: 3
       tags:
@@ -4106,18 +2424,27 @@ rules:
       tags:
         - BestPractices
         - JavaScript
-    "ClassNamingConventions":
-      severity: 3
+    "BumpApiVersion":
+      severity: 4
       tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "ClassNamingConventions":
+      severity: 2 # Modified from: 3
+      tags: # Modified from: ["Recommended","CodeStyle","Apex"]
         - Recommended
         - CodeStyle
         - Apex
+        - dschachPMDRuleset
     "CognitiveComplexity":
       severity: 3
-      tags:
+      tags: # Modified from: ["Recommended","Design","Apex"]
         - Recommended
         - Design
         - Apex
+        - dschachPMDRuleset
     "ConsistentReturn":
       severity: 3
       tags:
@@ -4125,28 +2452,60 @@ rules:
         - JavaScript
     "CyclomaticComplexity":
       severity: 3
-      tags:
+      tags: # Modified from: ["Recommended","Design","Apex"]
         - Recommended
         - Design
         - Apex
+        - dschachPMDRuleset
     "DebugsShouldUseLoggingLevel":
-      severity: 4
-      tags:
+      severity: 3 # Modified from: 4
+      tags: # Modified from: ["Recommended","BestPractices","Apex"]
         - Recommended
         - BestPractices
         - Apex
-    "EagerlyLoadedDescribeSObjectResult":
-      severity: 2
+        - dschachPMDRuleset
+    "DeclareAccessOnMethods":
+      severity: 4
       tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Apex
+        - Custom
+    "DoNotRunAsCurrentUser":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Apex
+        - Custom
+    "DoNotUseProcessBuilder":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "DoNotUseWithoutSharing":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Apex
+        - Custom
+    "EagerlyLoadedDescribeSObjectResult":
+      severity: 3 # Modified from: 2
+      tags: # Modified from: ["Recommended","Performance","Apex"]
         - Recommended
         - Performance
         - Apex
+        - dschachPMDRuleset
     "EmptyCatchBlock":
-      severity: 2
-      tags:
+      severity: 3 # Modified from: 2
+      tags: # Modified from: ["Recommended","ErrorProne","Apex"]
         - Recommended
         - ErrorProne
         - Apex
+        - dschachPMDRuleset
     "EmptyIfStmt":
       severity: 3
       tags:
@@ -4155,10 +2514,11 @@ rules:
         - Apex
     "EmptyStatementBlock":
       severity: 3
-      tags:
+      tags: # Modified from: ["Recommended","ErrorProne","Apex"]
         - Recommended
         - ErrorProne
         - Apex
+        - dschachPMDRuleset
     "EmptyTryOrFinallyBlock":
       severity: 3
       tags:
@@ -4176,23 +2536,20 @@ rules:
       tags:
         - ErrorProne
         - JavaScript
-    "ExcessiveClassLength":
-      severity: 3
-      tags:
-        - Design
-        - Apex
     "ExcessiveParameterList":
       severity: 3
-      tags:
+      tags: # Modified from: ["Recommended","Design","Apex"]
         - Recommended
         - Design
         - Apex
+        - dschachPMDRuleset
     "ExcessivePublicCount":
       severity: 3
-      tags:
+      tags: # Modified from: ["Recommended","Design","Apex"]
         - Recommended
         - Design
         - Apex
+        - dschachPMDRuleset
     "FieldDeclarationsShouldBeAtStart":
       severity: 3
       tags:
@@ -4200,11 +2557,12 @@ rules:
         - CodeStyle
         - Apex
     "FieldNamingConventions":
-      severity: 3
-      tags:
+      severity: 2 # Modified from: 3
+      tags: # Modified from: ["Recommended","CodeStyle","Apex"]
         - Recommended
         - CodeStyle
         - Apex
+        - dschachPMDRuleset
     "ForLoopsMustUseBraces":
       severity: 3
       tags:
@@ -4217,11 +2575,12 @@ rules:
         - CodeStyle
         - JavaScript
     "FormalParameterNamingConventions":
-      severity: 3
-      tags:
+      severity: 2 # Modified from: 3
+      tags: # Modified from: ["Recommended","CodeStyle","Apex"]
         - Recommended
         - CodeStyle
         - Apex
+        - dschachPMDRuleset
     "GlobalVariable":
       severity: 2
       tags:
@@ -4291,17 +2650,54 @@ rules:
         - Security
         - Visualforce
     "LocalVariableNamingConventions":
-      severity: 3
-      tags:
+      severity: 2 # Modified from: 3
+      tags: # Modified from: ["Recommended","CodeStyle","Apex"]
         - Recommended
         - CodeStyle
         - Apex
+        - dschachPMDRuleset
+    "ManageUsers":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "MetadataDescriptionFlow":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "MetadataDescriptionObjectField":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "MetadataDescriptionPermission":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "MetadataNoDescriptionPermissionSet":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
     "MethodNamingConventions":
-      severity: 3
-      tags:
+      severity: 2 # Modified from: 3
+      tags: # Modified from: ["Recommended","CodeStyle","Apex"]
         - Recommended
         - CodeStyle
         - Apex
+        - dschachPMDRuleset
     "MethodWithSameNameAsEnclosingClass":
       severity: 3
       tags:
@@ -4318,38 +2714,60 @@ rules:
       tags:
         - ErrorProne
         - XML
-    "NcssConstructorCount":
+    "ModifyOrViewAllData":
       severity: 4
-      tags:
-        - Design
-        - Apex
-    "NcssCount":
-      severity: 3
       tags:
         - Recommended
-        - Apex
+        - dschachPMDRuleset
+        - Xml
         - Custom
-    "NcssMethodCount":
+    "ModifyOrViewAllRecordsCustom":
       severity: 4
       tags:
-        - Design
-        - Apex
-    "NcssTypeCount":
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "ModifyOrViewAllRecordsStandard":
       severity: 4
       tags:
-        - Design
-        - Apex
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
     "NoElseReturn":
       severity: 3
       tags:
         - CodeStyle
         - JavaScript
-    "OneDeclarationPerLine":
-      severity: 3
+    "NoHardcodedWeblinkURLs":
+      severity: 4
       tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "NonPrivateCustomObjectSharing":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "NonPrivateStandardObjectSharing":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "OneDeclarationPerLine":
+      severity: 2 # Modified from: 3
+      tags: # Modified from: ["Recommended","CodeStyle","Apex"]
         - Recommended
         - CodeStyle
         - Apex
+        - dschachPMDRuleset
     "OperationWithHighCostInLoop":
       severity: 3
       tags:
@@ -4369,11 +2787,12 @@ rules:
         - ErrorProne
         - Apex
     "PropertyNamingConventions":
-      severity: 3
-      tags:
+      severity: 2 # Modified from: 3
+      tags: # Modified from: ["Recommended","CodeStyle","Apex"]
         - Recommended
         - CodeStyle
         - Apex
+        - dschachPMDRuleset
     "ProtectSensitiveData":
       severity: 3
       tags:
@@ -4386,6 +2805,20 @@ rules:
         - Recommended
         - BestPractices
         - Apex
+    "RequireExplicitSharing":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Apex
+        - Custom
+    "RequireOuterClassAccess":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Apex
+        - Custom
     "ScopeForInVariable":
       severity: 2
       tags:
@@ -4393,9 +2826,10 @@ rules:
         - JavaScript
     "StdCyclomaticComplexity":
       severity: 3
-      tags:
+      tags: # Modified from: ["Design","Apex"]
         - Design
         - Apex
+        - dschachPMDRuleset
     "TestMethodsMustBeInTestClasses":
       severity: 3
       tags:
@@ -4404,10 +2838,11 @@ rules:
         - Apex
     "TooManyFields":
       severity: 3
-      tags:
+      tags: # Modified from: ["Recommended","Design","Apex"]
         - Recommended
         - Design
         - Apex
+        - dschachPMDRuleset
     "TypeShadowsBuiltInNamespace":
       severity: 2
       tags:
@@ -4480,6 +2915,20 @@ rules:
         - Recommended
         - Security
         - Visualforce
+    "ViewSetupPermissionSet":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+    "ViewSetupProfile":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
     "WhileLoopsMustUseBraces":
       severity: 3
       tags:
@@ -4491,6 +2940,80 @@ rules:
       tags:
         - CodeStyle
         - JavaScript
+    "ExcessiveClassLength":
+      severity: 3
+      tags:
+        - Design
+        - Apex
+        - dschachPMDRuleset
+      disabled: true # Modified from: false
+    "NcssConstructorCount":
+      severity: 3
+      tags:
+        - Design
+        - Apex
+        - dschachPMDRuleset
+      disabled: true # Modified from: false
+    "NcssCount":
+      severity: 3
+      tags:
+        - Recommended
+        - Apex
+        - Custom
+      disabled: true # Modified from: false
+    "NcssMethodCount":
+      severity: 3
+      tags:
+        - Design
+        - Apex
+        - dschachPMDRuleset
+      disabled: true # Modified from: false
+    "NcssTypeCount":
+      severity: 3
+      tags:
+        - Design
+        - Apex
+        - dschachPMDRuleset
+      disabled: true # Modified from: false
+
+  # ======================================================================
+  # CPD ENGINE RULE OVERRIDES
+  # ======================================================================
+  cpd:
+    "DetectCopyPasteForApex":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Apex
+    "DetectCopyPasteForHtml":
+      severity: 5
+      tags:
+        - Design
+        - Html
+    "DetectCopyPasteForJavascript":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Javascript
+    "DetectCopyPasteForTypescript":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Typescript
+    "DetectCopyPasteForVisualforce":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Visualforce
+    "DetectCopyPasteForXml":
+      severity: 5
+      tags:
+        - Design
+        - Xml
 
   # ======================================================================
   # SFGE ENGINE RULE OVERRIDES
@@ -4620,7 +3143,7 @@ engines:
     # We currently support both flat and legacy ESLint configuration files, but will be removing support for legacy eslintrc
     # ESLint configuration files in the coming months.
     # See https://eslint.org/docs/latest/use/configure/configuration-files to learn more.
-    eslint_config_file: null
+    eslint_config_file: eslint.config.js # Modified from: null
 
     # Your project's legacy ".eslintignore" file. May be an absolute path or a path relative to the config_root.
     # If null and auto_discover_eslint_config is true, then Code Analyzer will attempt to discover/apply it automatically.
@@ -4652,12 +3175,12 @@ engines:
     # Whether to turn off the default base configuration that supplies the standard rules for TypeScript files
     # The base configuration for TypeScript files adds the rules from the "plugin:@typescript-eslint:all" configuration to Code Analyzer.
     # See https://typescript-eslint.io/rules and https://eslint.org/docs/latest/rules for the lists of rules.
-    disable_typescript_base_config: false
+    disable_typescript_base_config: true # Modified from: false
 
     # Whether to turn off the default base configuration that supplies the React/JSX rules for .jsx and .tsx files
     # The base configuration for React adds the rules from the "eslint-plugin-react" configuration to Code Analyzer.
     # See https://www.npmjs.com/package/eslint-plugin-react for the list of rules.
-    disable_react_base_config: false
+    disable_react_base_config: true # Modified from: false
 
     # Extensions of the files in your workspace that will be used to discover rules.
     # To associate file extensions to the standard ESLint JavaScript rules, LWC rules, or custom JavaScript-based
@@ -4699,6 +3222,64 @@ engines:
     # May be provided as the name of a command that exists on the path, or an absolute file path location.
     # If unspecified, or specified as null, then an attempt will be made to automatically discover a Python command from your environment.
     python_command: null # Last calculated by the config command as: "python3"
+
+  # ======================================================================
+  # PMD ENGINE CONFIGURATION
+  # To learn more about this configuration, visit:
+  #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-pmd.html#pmd-configuration-reference
+  # ======================================================================
+  pmd:
+
+    # Whether to turn off the 'pmd' engine so that it is not included when running Code Analyzer commands.
+    disable_engine: false
+
+    # Indicates the specific 'java' command associated with the JRE or JDK to use for the 'pmd' engine.
+    # May be provided as the name of a command that exists on the path, or an absolute file path location.
+    # If unspecified, or specified as null, then an attempt will be made to automatically discover a 'java' command from your environment.
+    java_command: null # Last calculated by the config command as: "java"
+
+    # Specifies the list of file extensions to associate to each rule language.
+    # The rule(s) associated with a given language will run against all the files in your workspace containing one of
+    # the specified file extensions. Each file extension can only be associated to one language. If a specific language
+    # is not specified, then a set of default file extensions for that language will be used.
+    file_extensions:
+      apex:
+        - .cls
+        - .trigger
+      html:
+        - .html
+        - .htm
+        - .xhtml
+        - .xht
+        - .shtml
+        - .cmp
+      javascript:
+        - .js
+        - .cjs
+        - .mjs
+      typescript:
+        - .ts
+      visualforce:
+        - .page
+        - .component
+      xml:
+        - .xml
+
+    # List of jar files and/or folders to add the Java classpath when running PMD.
+    # Each entry may be given as an absolute path or a relative path to 'config_root'.
+    # This field is primarily used to supply custom Java based rule definitions to PMD.
+    # See https://pmd.github.io/pmd/pmd_userdocs_extending_writing_java_rules.html
+    java_classpath_entries: []
+
+    # List of xml ruleset files containing custom PMD rules to be made available for rule selection.
+    # Each ruleset must be an xml file that is either:
+    #   - on disk (provided as an absolute path or a relative path to 'config_root')
+    #   - or a relative resource found on the Java classpath.
+    # Not all custom rules can be fully defined within an xml ruleset file. For example, Java based rules may be defined in jar files.
+    # In these cases, you will need to also add your additional files to the Java classpath using the 'java_classpath_entries' field.
+    # See https://pmd.github.io/pmd/pmd_userdocs_making_rulesets.html to learn more about PMD rulesets.
+    custom_rulesets: # Modified from: []
+      - config/ruleset.xml
 
   # ======================================================================
   # CPD ENGINE CONFIGURATION
@@ -4757,64 +3338,7 @@ engines:
       xml: 100
 
     # Indicates whether to ignore multiple copies of files of the same name and length.
-    skip_duplicate_files: false
-
-  # ======================================================================
-  # PMD ENGINE CONFIGURATION
-  # To learn more about this configuration, visit:
-  #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-pmd.html#pmd-configuration-reference
-  # ======================================================================
-  pmd:
-
-    # Whether to turn off the 'pmd' engine so that it is not included when running Code Analyzer commands.
-    disable_engine: false
-
-    # Indicates the specific 'java' command associated with the JRE or JDK to use for the 'pmd' engine.
-    # May be provided as the name of a command that exists on the path, or an absolute file path location.
-    # If unspecified, or specified as null, then an attempt will be made to automatically discover a 'java' command from your environment.
-    java_command: null # Last calculated by the config command as: "java"
-
-    # Specifies the list of file extensions to associate to each rule language.
-    # The rule(s) associated with a given language will run against all the files in your workspace containing one of
-    # the specified file extensions. Each file extension can only be associated to one language. If a specific language
-    # is not specified, then a set of default file extensions for that language will be used.
-    file_extensions:
-      apex:
-        - .cls
-        - .trigger
-      html:
-        - .html
-        - .htm
-        - .xhtml
-        - .xht
-        - .shtml
-        - .cmp
-      javascript:
-        - .js
-        - .cjs
-        - .mjs
-      typescript:
-        - .ts
-      visualforce:
-        - .page
-        - .component
-      xml:
-        - .xml
-
-    # List of jar files and/or folders to add the Java classpath when running PMD.
-    # Each entry may be given as an absolute path or a relative path to 'config_root'.
-    # This field is primarily used to supply custom Java based rule definitions to PMD.
-    # See https://pmd.github.io/pmd/pmd_userdocs_extending_writing_java_rules.html
-    java_classpath_entries: []
-
-    # List of xml ruleset files containing custom PMD rules to be made available for rule selection.
-    # Each ruleset must be an xml file that is either:
-    #   - on disk (provided as an absolute path or a relative path to 'config_root')
-    #   - or a relative resource found on the Java classpath.
-    # Not all custom rules can be fully defined within an xml ruleset file. For example, Java based rules may be defined in jar files.
-    # In these cases, you will need to also add your additional files to the Java classpath using the 'java_classpath_entries' field.
-    # See https://pmd.github.io/pmd/pmd_userdocs_making_rulesets.html to learn more about PMD rulesets.
-    custom_rulesets: []
+    skip_duplicate_files: true # Modified from: false
 
   # ======================================================================
   # SFGE ENGINE CONFIGURATION

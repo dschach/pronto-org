@@ -1,54 +1,55 @@
 <template>
-    <lightning-modal-header label="API Callout Tool"></lightning-modal-header>
-    <lightning-modal-body>
-        <p class="primary slds-m-bottom_xx-small">Data Graph Query API Endpoint</p>
-        <code>/ssot/data-graphs/data/<span class="orange">&lt;dataGraphEntityName&gt;</span>?lookupKeys=<span class="orange">&lt;lookupKeys&gt;</span>&live=true&htmlEncode=false</code>
+	<lightning-modal-header label="API Callout Tool"></lightning-modal-header>
+	<lightning-modal-body>
+		<p class="primary slds-m-bottom_xx-small">Data Graph Query API Endpoint</p>
+		<code
+			>/ssot/data-graphs/data/<span class="orange">&lt;dataGraphEntityName&gt;</span>?lookupKeys=<span class="orange"
+				>&lt;lookupKeys&gt;</span
+			>&live=true&htmlEncode=false</code
+		>
 
-        <div class="slds-form slds-m-top_large">
-            <div class="slds-form-element slds-m-bottom_medium">
-                <lightning-input 
-                    type="text" 
-                    value="Real_Time_Engagements"
-                    onchange={handleEntityChange}
-                    label="Data Graph Entity Name"
-                ></lightning-input>
-            </div>
+		<div class="slds-form slds-m-top_large">
+			<div class="slds-form-element slds-m-bottom_medium">
+				<lightning-input
+					type="text"
+					value="Real_Time_Engagements"
+					onchange={handleEntityChange}
+					label="Data Graph Entity Name"></lightning-input>
+			</div>
 
-            <div class="slds-form-element slds-m-bottom_medium">
-                <lightning-input 
-                    type="text" 
-                    onchange={handleLookupKeysChange}
-                    label="Lookup Keys"
-                    value="[UnifiedLinkssotIndividualCcid__dlm.SourceRecordId__c=<enter_id_here>]"
-                    placeholder='Example: [UnifiedLinkssotIndividualCcid__dlm.SourceRecordId__c=1e2g700000009g1d]'
-                ></lightning-input>
-            </div>
-            
-            <div class="slds-m-bottom_medium">
-                <lightning-button 
-                    variant="brand" 
-                    label="Make API Callout" 
-                    onclick={handleApiCallout}
-                    disabled={isLoading}
-                ></lightning-button>
-            </div>
+			<div class="slds-form-element slds-m-bottom_medium">
+				<lightning-input
+					type="text"
+					onchange={handleLookupKeysChange}
+					label="Lookup Keys"
+					value="[UnifiedLinkssotIndividualCcid__dlm.SourceRecordId__c=<enter_id_here>]"
+					placeholder="Example: [UnifiedLinkssotIndividualCcid__dlm.SourceRecordId__c=1e2g700000009g1d]"></lightning-input>
+			</div>
 
-            <div if:true={isLoading} class="slds-m-bottom_medium">
-                <lightning-spinner></lightning-spinner>
-            </div>
+			<div class="slds-m-bottom_medium">
+				<lightning-button
+					variant="brand"
+					label="Make API Callout"
+					onclick={handleApiCallout}
+					disabled={isLoading}></lightning-button>
+			</div>
 
-            <div if:true={error} class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
-                <span class="slds-assistive-text">error</span>
-                <h2>{error}</h2>
-            </div>
+			<div if:true={isLoading} class="slds-m-bottom_medium">
+				<lightning-spinner></lightning-spinner>
+			</div>
 
-            <div if:true={response} class="slds-m-top_medium">
-                <h3 class="slds-text-heading_small slds-m-bottom_small">Response:</h3>
-                <pre class="response-pre">{formattedResponse}</pre>
-            </div>
-        </div>
-    </lightning-modal-body>
-    <lightning-modal-footer>
-        <lightning-button label="Close" onclick={handleClose}></lightning-button>
-    </lightning-modal-footer>
+			<div if:true={error} class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+				<span class="slds-assistive-text">error</span>
+				<h2>{error}</h2>
+			</div>
+
+			<div if:true={response} class="slds-m-top_medium">
+				<h3 class="slds-text-heading_small slds-m-bottom_small">Response:</h3>
+				<pre class="response-pre">{formattedResponse}</pre>
+			</div>
+		</div>
+	</lightning-modal-body>
+	<lightning-modal-footer>
+		<lightning-button label="Close" onclick={handleClose}></lightning-button>
+	</lightning-modal-footer>
 </template>

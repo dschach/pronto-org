@@ -1,100 +1,111 @@
 <template>
-    <template if:true={isOpen}>
-        <!-- Modal Backdrop -->
-        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
-        
-        <!-- Modal Container -->
-        <section class="slds-modal slds-fade-in-open slds-modal_large" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
-            <div class="slds-modal__container">
-                <!-- Modal Header -->
-                <header class="slds-modal__header">
-                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Related Individuals</h2>
-                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
-                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
-                        <span class="slds-assistive-text">Close</span>
-                    </button>
-                </header>
-                
-                <!-- Modal Body -->
-                <div class="slds-modal__content" id="modal-content-id-1">
-                    <!-- Debug Information -->
-                    <template if:true={isDebugMode}>
-                        <div class="slds-box slds-theme_shade slds-m-bottom_medium">
-                            <h3 class="slds-text-heading_small">Debug Information</h3>
-                            <p><strong>Record ID:</strong> {recordId}</p>
-                            <p><strong>Data Length:</strong> {dataLength}</p>
-                            <p><strong>Raw Data:</strong></p>
-                            <pre class="debug-text">{rawDataString}</pre>
-                            <p><strong>Error:</strong> {error}</p>
-                        </div>
-                    </template>
-                    
-                    <!-- Error State -->
-                    <template if:true={error}>
-                        <div class="slds-notify slds-notify_alert slds-theme_error slds-m-bottom_medium">
-                            <span class="slds-assistive-text">error</span>
-                            <h2>{error}</h2>
-                        </div>
-                    </template>
-                    
-                    <!-- Loading State -->
-                    <template if:true={isLoading}>
-                        <div class="slds-text-align_center slds-p-around_large">
-                            <lightning-spinner alternative-text="Loading related individuals..." size="small"></lightning-spinner>
-                        </div>
-                    </template>
-                    
-                    <!-- Data Table -->
-                    <template if:true={hasData}>
-                        <div class="slds-grid slds-wrap">
+	<template if:true={isOpen}>
+		<!-- Modal Backdrop -->
+		<div class="slds-backdrop slds-backdrop_open relatedIndividualsModal-backdrop" role="presentation"></div>
 
-  
-                            <div class="slds-size_1-of-1">
-                                <lightning-datatable
-                                key-field="sourceId"
-                                data={data}
-                                columns={columns}
-                                hide-checkbox-column
-                                show-row-number-column>
-                            </lightning-datatable>    
-                            </div>
-                            <div class="slds-size_1-of-1 slds-p-around_medium">
-                                <!-- Information Section -->
-                                <div class="slds-box slds-theme_shade">
-                                    <div class="slds-media slds-media_center">
-                                        <div class="slds-media__figure">
-                                            <lightning-icon icon-name="standard:data_cloud" size="small" class="slds-m-right_small"></lightning-icon>
-                                        </div>
-                                        <div class="slds-media__body">
-                                            <h3 class="slds-text-heading_small slds-m-bottom_x-small">About Related Individuals</h3>
-                                            <p class="slds-text-body_regular">
-                                                This view shows all individuals that have been unified with the current record through Data Cloud's Identity Resolution. 
-                                                These records represent the same person across different data sources and systems.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </template>
-                    
-                    <!-- No Data State -->
-                    <template if:false={hasData}>
-                        <template if:false={isLoading}>
-                            <template if:false={error}>
-                                <div class="slds-text-align_center slds-p-around_large">
-                                    <p>No related individuals found for this record.</p>
-                                </div>
-                            </template>
-                        </template>
-                    </template>
-                </div>
-                
-                <!-- Modal Footer (optional) -->
-                <footer class="slds-modal__footer">
-                    <button class="slds-button slds-button_neutral" onclick={closeModal}>Close</button>
-                </footer>
-            </div>
-        </section>
-    </template>
+		<!-- Modal Container -->
+		<section
+			class="slds-modal slds-fade-in-open slds-modal_large relatedIndividualsModal-modal"
+			role="dialog"
+			tabindex="-1"
+			aria-labelledby="modal-heading-01"
+			aria-modal="true"
+			aria-describedby="modal-content-id-1">
+			<div class="slds-modal__container relatedIndividualsModal-modalContainer">
+				<!-- Modal Header -->
+				<header class="slds-modal__header">
+					<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Related Individuals</h2>
+					<button
+						class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+						title="Close"
+						onclick={closeModal}>
+						<lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+						<span class="slds-assistive-text">Close</span>
+					</button>
+				</header>
+
+				<!-- Modal Body -->
+				<div class="slds-modal__content relatedIndividualsModal-modalContent" id="modal-content-id-1">
+					<!-- Debug Information -->
+					<template if:true={isDebugMode}>
+						<div class="slds-box slds-theme_shade slds-m-bottom_medium">
+							<h3 class="slds-text-heading_small">Debug Information</h3>
+							<p><strong>Record ID:</strong> {recordId}</p>
+							<p><strong>Data Length:</strong> {dataLength}</p>
+							<p><strong>Raw Data:</strong></p>
+							<pre class="debug-text">{rawDataString}</pre>
+							<p><strong>Error:</strong> {error}</p>
+						</div>
+					</template>
+
+					<!-- Error State -->
+					<template if:true={error}>
+						<div class="slds-notify slds-notify_alert slds-theme_error slds-m-bottom_medium">
+							<span class="slds-assistive-text">error</span>
+							<h2>{error}</h2>
+						</div>
+					</template>
+
+					<!-- Loading State -->
+					<template if:true={isLoading}>
+						<div class="slds-text-align_center slds-p-around_large">
+							<lightning-spinner alternative-text="Loading related individuals..." size="small"></lightning-spinner>
+						</div>
+					</template>
+
+					<!-- Data Table -->
+					<template if:true={hasData}>
+						<div class="slds-grid slds-wrap">
+							<div class="slds-size_1-of-1">
+								<lightning-datatable
+									key-field="sourceId"
+									data={data}
+									columns={columns}
+									hide-checkbox-column
+									show-row-number-column>
+								</lightning-datatable>
+							</div>
+							<div class="slds-size_1-of-1 slds-p-around_medium">
+								<!-- Information Section -->
+								<div class="slds-box slds-theme_shade">
+									<div class="slds-media slds-media_center">
+										<div class="slds-media__figure">
+											<lightning-icon
+												icon-name="standard:data_cloud"
+												size="small"
+												class="slds-m-right_small"></lightning-icon>
+										</div>
+										<div class="slds-media__body">
+											<h3 class="slds-text-heading_small slds-m-bottom_x-small">About Related Individuals</h3>
+											<p class="slds-text-body_regular">
+												This view shows all individuals that have been unified with the current record through Data
+												Cloud's Identity Resolution. These records represent the same person across different data
+												sources and systems.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</template>
+
+					<!-- No Data State -->
+					<template if:false={hasData}>
+						<template if:false={isLoading}>
+							<template if:false={error}>
+								<div class="slds-text-align_center slds-p-around_large">
+									<p>No related individuals found for this record.</p>
+								</div>
+							</template>
+						</template>
+					</template>
+				</div>
+
+				<!-- Modal Footer (optional) -->
+				<footer class="slds-modal__footer">
+					<button class="slds-button slds-button_neutral" onclick={closeModal}>Close</button>
+				</footer>
+			</div>
+		</section>
+	</template>
 </template>

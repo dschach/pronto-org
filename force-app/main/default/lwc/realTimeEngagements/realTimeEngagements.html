@@ -1,105 +1,82 @@
 <template>
-    <lightning-card title="Engagement Feed" icon-name="utility:chart">
-        <div slot="actions">
-            <lightning-button-menu 
-                alternative-text="More options" 
-                icon-size="x-small" 
-                menu-alignment="right"
-                variant="border-filled">
-                <lightning-menu-item 
-                    value="view-unified-profiles" 
-                    label="View Unified Profiles"
-                    onclick={handleViewUnifiedProfiles}>
-                </lightning-menu-item>
-            </lightning-button-menu>
-        </div>
-        
-        <div class="slds-var-m-around_medium">
-            <!-- Loading State -->
-            <template if:true={isLoading}>
-                <div class="slds-text-align_center slds-var-p-around_large">
-                    <lightning-spinner
-                        alternative-text="Loading engagements..."
-                        size="small"
-                    ></lightning-spinner>
-                </div>
-            </template>
+	<lightning-card title="Engagement Feed" icon-name="utility:chart">
+		<div slot="actions">
+			<lightning-button-menu
+				alternative-text="More options"
+				icon-size="x-small"
+				menu-alignment="right"
+				variant="border-filled">
+				<lightning-menu-item
+					value="view-unified-profiles"
+					label="View Unified Profiles"
+					onclick={handleViewUnifiedProfiles}>
+				</lightning-menu-item>
+			</lightning-button-menu>
+		</div>
 
-            <!-- Error State -->
-            <template if:true={hasError}>
-                <div class="slds-notify slds-notify_alert slds-theme_error">
-                    <span class="slds-assistive-text">error</span>
-                    <h2>{error}</h2>
-                </div>
-            </template>
+		<div class="slds-var-m-around_medium">
+			<!-- Loading State -->
+			<template if:true={isLoading}>
+				<div class="slds-text-align_center slds-var-p-around_large">
+					<lightning-spinner alternative-text="Loading engagements..." size="small"></lightning-spinner>
+				</div>
+			</template>
 
-            <!-- No Record ID -->
-            <template if:false={recordId}>
-                <div class="slds-text-align_center slds-var-p-around_large">
-                    <p>
-                        No record selected. Please navigate to a Contact or Lead
-                        record.
-                    </p>
-                </div>
-            </template>
+			<!-- Error State -->
+			<template if:true={hasError}>
+				<div class="slds-notify slds-notify_alert slds-theme_error">
+					<span class="slds-assistive-text">error</span>
+					<h2>{error}</h2>
+				</div>
+			</template>
 
-            <!-- No Engagements -->
-            <template if:false={isLoading}>
-                <template if:false={hasError}>
-                    <template if:false={recordId}>
-                        <!-- Already handled above -->
-                    </template>
-                    <template if:true={recordId}>
-                        <template if:false={hasEngagements}>
-                            <div
-                                class="slds-text-align_center slds-var-p-around_large"
-                            >
-                                <p>
-                                    No page engagements found for this
-                                    individual.
-                                </p>
-                            </div>
-                        </template>
-                    </template>
-                </template>
-            </template>
+			<!-- No Record ID -->
+			<template if:false={recordId}>
+				<div class="slds-text-align_center slds-var-p-around_large">
+					<p>No record selected. Please navigate to a Contact or Lead record.</p>
+				</div>
+			</template>
 
-            <!-- Engagement Statistics - Only First Two -->
-            <template if:true={engagementStats}>
-                <div class="slds-var-m-bottom_large">
-                    <div class="slds-grid slds-wrap slds-gutters">
-                        <div class="slds-col slds-size_1-of-2">
-                            <div class="slds-box slds-text-align_center">
-                                <h3
-                                    class="slds-text-heading_small slds-text-color_weak"
-                                >
-                                    Total Engagements
-                                </h3>
-                                <p class="slds-text-heading_large">
-                                    {engagementStats.total}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="slds-col slds-size_1-of-2">
-                            <div class="slds-box slds-text-align_center">
-                                <h3
-                                    class="slds-text-heading_small slds-text-color_weak"
-                                >
-                                    Engagement Types
-                                </h3>
-                                <p class="slds-text-heading_large">
-                                    {engagementStats.uniqueTypes}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </template>
+			<!-- No Engagements -->
+			<template if:false={isLoading}>
+				<template if:false={hasError}>
+					<template if:false={recordId}>
+						<!-- Already handled above -->
+					</template>
+					<template if:true={recordId}>
+						<template if:false={hasEngagements}>
+							<div class="slds-text-align_center slds-var-p-around_large">
+								<p>No page engagements found for this individual.</p>
+							</div>
+						</template>
+					</template>
+				</template>
+			</template>
 
-            <!-- Timeline View with SLDS Timeline -->
-            <template if:true={hasEngagements}>
-                <!-- Debug Information (remove in production) -->
-                <!-- <div class="slds-box slds-var-m-bottom_medium slds-theme_shade">
+			<!-- Engagement Statistics - Only First Two -->
+			<template if:true={engagementStats}>
+				<div class="slds-var-m-bottom_large">
+					<div class="slds-grid slds-wrap slds-gutters">
+						<div class="slds-col slds-size_1-of-2">
+							<div class="slds-box slds-text-align_center">
+								<h3 class="slds-text-heading_small slds-text-color_weak">Total Engagements</h3>
+								<p class="slds-text-heading_large">{engagementStats.total}</p>
+							</div>
+						</div>
+						<div class="slds-col slds-size_1-of-2">
+							<div class="slds-box slds-text-align_center">
+								<h3 class="slds-text-heading_small slds-text-color_weak">Engagement Types</h3>
+								<p class="slds-text-heading_large">{engagementStats.uniqueTypes}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</template>
+
+			<!-- Timeline View with SLDS Timeline -->
+			<template if:true={hasEngagements}>
+				<!-- Debug Information (remove in production) -->
+				<!-- <div class="slds-box slds-var-m-bottom_medium slds-theme_shade">
                     <h3 class="slds-text-heading_small">Debug: Pagination Info</h3>
                     <p><strong>Current Page:</strong> {paginationDebugInfo.currentPage}</p>
                     <p><strong>Page Size:</strong> {paginationDebugInfo.pageSize}</p>
@@ -112,98 +89,79 @@
                     <p><strong>Pagination Summary:</strong> {paginationDebugInfo.paginationSummary}</p>
                 </div> -->
 
-                <ul class="slds-timeline">
-                    <template
-                        for:each={paginatedEngagements}
-                        for:item="engagement"
-                    >
-                        <li key={engagement.id} class="timeline-item">
-                            <span class="slds-assistive-text">engagement</span>
-                            <div class="slds-media">
-                                <div class="slds-media__figure">
-                                    <div class="slds-timeline__icon" title="engagement">
-                                        <lightning-icon
-                                            icon-name={engagement.icon}
-                                            size="x-small"
-                                            alternative-text="engagement"
-                                        ></lightning-icon>
-                                    </div>
-                                </div>
-                                <div class="slds-media__body">
-                                    <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
-                                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
-                                            <h3 class="slds-truncate" title={engagement.title}>
-                                                <strong>{engagement.title}</strong>
-                                            </h3>
-                                        </div>
-                                        <div class="slds-no-flex">
-                                            <p class="slds-timeline__date">
-                                                {engagement.timestamp}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-content">
-                                        <template if:true={engagement.description}>
-                                            <p class="slds-text-body_regular slds-var-m-top_x-small">
-                                                {engagement.description}
-                                            </p>
-                                        </template>
-                                        <template if:false={engagement.description}>
-                                            <p class="slds-text-body_regular slds-text-color_weak slds-var-m-top_x-small">
-                                                No description available for this engagement.
-                                            </p>
-                                        </template>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </template>
-                </ul>
+				<ul class="slds-timeline">
+					<template for:each={paginatedEngagements} for:item="engagement">
+						<li key={engagement.id} class="timeline-item">
+							<span class="slds-assistive-text">engagement</span>
+							<div class="slds-media">
+								<div class="slds-media__figure realTimeEngagements-mediaFigure">
+									<div class="slds-timeline__icon realTimeEngagements-timelineIcon" title="engagement">
+										<lightning-icon
+											icon-name={engagement.icon}
+											size="x-small"
+											alternative-text="engagement"></lightning-icon>
+									</div>
+								</div>
+								<div class="slds-media__body">
+									<div
+										class="slds-grid slds-grid_align-spread slds-timeline__trigger realTimeEngagements-timelineTrigger">
+										<div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+											<h3 class="slds-truncate" title={engagement.title}>
+												<strong>{engagement.title}</strong>
+											</h3>
+										</div>
+										<div class="slds-no-flex">
+											<p class="slds-timeline__date realTimeEngagements-timelineDate">{engagement.timestamp}</p>
+										</div>
+									</div>
+									<div class="timeline-content">
+										<template if:true={engagement.description}>
+											<p class="slds-text-body_regular slds-var-m-top_x-small">{engagement.description}</p>
+										</template>
+										<template if:false={engagement.description}>
+											<p class="slds-text-body_regular slds-text-color_weak slds-var-m-top_x-small">
+												No description available for this engagement.
+											</p>
+										</template>
+									</div>
+								</div>
+							</div>
+						</li>
+					</template>
+				</ul>
 
-                <!-- Pagination Controls -->
-                <div
-                    class="slds-var-m-top_medium slds-border_top slds-var-p-top_medium"
-                >
-                    <div class="slds-grid slds-grid_align-spread">
-                        <div class="slds-col">
-                            <lightning-button
-                                label="Previous"
-                                icon-name="utility:chevronleft"
-                                onclick={handlePreviousPage}
-                                disabled={isFirstPage}
-                                variant="neutral"
-                            >
-                            </lightning-button>
-                        </div>
-                        <div
-                            class="slds-col slds-align-middle slds-text-align_center"
-                        >
-                            <span
-                                class="slds-text-body_small slds-text-color_weak"
-                                >{paginationSummary}</span
-                            >
-                        </div>
-                        <div class="slds-col slds-text-align_right">
-                            <lightning-button
-                                label="Next"
-                                icon-name="utility:chevronright"
-                                icon-position="right"
-                                onclick={handleNextPage}
-                                disabled={isLastPage}
-                                variant="neutral"
-                            >
-                            </lightning-button>
-                        </div>
-                    </div>
-                </div>
-            </template>
-        </div>
-    </lightning-card>
-    
-    <!-- Related Individuals Modal -->
-    <c-related-individuals-modal
-        is-open={showModal}
-        record-id={recordId}
-        onclose={handleModalClose}>
-    </c-related-individuals-modal>
+				<!-- Pagination Controls -->
+				<div class="slds-var-m-top_medium slds-border_top slds-var-p-top_medium">
+					<div class="slds-grid slds-grid_align-spread">
+						<div class="slds-col">
+							<lightning-button
+								label="Previous"
+								icon-name="utility:chevronleft"
+								onclick={handlePreviousPage}
+								disabled={isFirstPage}
+								variant="neutral">
+							</lightning-button>
+						</div>
+						<div class="slds-col slds-align-middle slds-text-align_center">
+							<span class="slds-text-body_small slds-text-color_weak">{paginationSummary}</span>
+						</div>
+						<div class="slds-col slds-text-align_right">
+							<lightning-button
+								label="Next"
+								icon-name="utility:chevronright"
+								icon-position="right"
+								onclick={handleNextPage}
+								disabled={isLastPage}
+								variant="neutral">
+							</lightning-button>
+						</div>
+					</div>
+				</div>
+			</template>
+		</div>
+	</lightning-card>
+
+	<!-- Related Individuals Modal -->
+	<c-related-individuals-modal is-open={showModal} record-id={recordId} onclose={handleModalClose}>
+	</c-related-individuals-modal>
 </template>

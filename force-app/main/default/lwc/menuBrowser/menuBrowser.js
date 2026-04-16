@@ -3,130 +3,129 @@ import getMenuCategories from '@salesforce/apex/MenuBrowserController.getMenuCat
 import getMenuItems from '@salesforce/apex/MenuBrowserController.getMenuItems';
 
 export default class MenuBrowser extends LightningElement {
-    @api recordId;
-    @track categories = [];
-    @track items = [];
-    @track filteredItems = [];
-    @track selectedCategoryId = null;
-    @track searchKeyword = '';
-    @track showVegetarian = false;
-    @track showSpicy = false;
-    @track loading = true;
-    @track error = null;
+	@api recordId;
+	@track categories = [];
+	@track items = [];
+	@track filteredItems = [];
+	@track selectedCategoryId = null;
+	@track searchKeyword = '';
+	@track showVegetarian = false;
+	@track showSpicy = false;
+	@track loading = true;
+	@track error = null;
 
-    connectedCallback() {
-        if (this.recordId) {
-            this.loadMenuData();
-        }
-    }
+	connectedCallback() {
+		if (this.recordId) {
+			this.loadMenuData();
+		}
+	}
 
-    loadMenuData() {
-        this.loading = true;
-        this.error = null;
+	loadMenuData() {
+		this.loading = true;
+		this.error = null;
 
-        const menuId = this.recordId;
-        
-        getMenuCategories({ menuId: menuId })
-            .then(result => {
-                this.categories = result;
-                // Set first category as default selected
-                if (this.categories.length > 0) {
-                    this.selectedCategoryId = this.categories[0].id;
-                }
-                return getMenuItems({ menuId: menuId });
-            })
-            .then(result => {
-                this.items = result;
-                this.filteredItems = result;
-                this.applyFilters();
-            })
-            .catch(error => {
-                this.error = error;
-                console.error('Error loading menu data:', error);
-            })
-            .finally(() => {
-                this.loading = false;
-            });
-    }
+		const menuId = this.recordId;
 
-    handleCategorySelect(event) {
-        this.selectedCategoryId = event.detail.categoryId;
-        this.applyFilters();
-    }
+		getMenuCategories({ menuId: menuId })
+			.then((result) => {
+				this.categories = result;
+				// Set first category as default selected
+				if (this.categories.length > 0) {
+					this.selectedCategoryId = this.categories[0].id;
+				}
+				return getMenuItems({ menuId: menuId });
+			})
+			.then((result) => {
+				this.items = result;
+				this.filteredItems = result;
+				this.applyFilters();
+			})
+			.catch((error) => {
+				this.error = error;
+				console.error('Error loading menu data:', error);
+			})
+			.finally(() => {
+				this.loading = false;
+			});
+	}
 
-    handleSearchInput(event) {
-        this.searchKeyword = event.target.value.toLowerCase();
-        this.applyFilters();
-    }
+	handleCategorySelect(event) {
+		this.selectedCategoryId = event.detail.categoryId;
+		this.applyFilters();
+	}
 
-    handleVegetarianFilter() {
-        this.showVegetarian = !this.showVegetarian;
-        this.applyFilters();
-    }
+	handleSearchInput(event) {
+		this.searchKeyword = event.target.value.toLowerCase();
+		this.applyFilters();
+	}
 
-    handleSpicyFilter() {
-        this.showSpicy = !this.showSpicy;
-        this.applyFilters();
-    }
+	handleVegetarianFilter() {
+		this.showVegetarian = !this.showVegetarian;
+		this.applyFilters();
+	}
 
-    applyFilters() {
-        let filtered = this.items;
+	handleSpicyFilter() {
+		this.showSpicy = !this.showSpicy;
+		this.applyFilters();
+	}
 
-        // Apply category filter
-        if (this.selectedCategoryId) {
-            filtered = filtered.filter(item => 
-                item.Menu_Category__c === this.selectedCategoryId
-            );
-        }
+	applyFilters() {
+		let filtered = this.items;
 
-        // Apply search filter
-        if (this.searchKeyword) {
-            filtered = filtered.filter(item =>
-                item.Name.toLowerCase().includes(this.searchKeyword) ||
-                (item.Description__c && item.Description__c.toLowerCase().includes(this.searchKeyword))
-            );
-        }
+		// Apply category filter
+		if (this.selectedCategoryId) {
+			filtered = filtered.filter((item) => item.Menu_Category__c === this.selectedCategoryId);
+		}
 
-        // Apply vegetarian filter
-        if (this.showVegetarian) {
-            filtered = filtered.filter(item =>
-                item.Name.toLowerCase().includes('vegan') ||
-                item.Name.toLowerCase().includes('vegetarian') ||
-                item.Description__c?.toLowerCase().includes('vegan') ||
-                item.Description__c?.toLowerCase().includes('vegetarian')
-            );
-        }
+		// Apply search filter
+		if (this.searchKeyword) {
+			filtered = filtered.filter(
+				(item) => item.Name.toLowerCase().includes(this.searchKeyword) || (item.Description__c && item.Description__c.toLowerCase().includes(this.searchKeyword))
+			);
+		}
 
-        // Apply spicy filter
-        if (this.showSpicy) {
-            filtered = filtered.filter(item =>
-                item.Name.toLowerCase().includes('spicy') ||
-                item.Name.toLowerCase().includes('hot') ||
-                item.Description__c?.toLowerCase().includes('spicy') ||
-                item.Description__c?.toLowerCase().includes('hot')
-            );
-        }
+		// Apply vegetarian filter
+		if (this.showVegetarian) {
+			filtered = filtered.filter(
+				(item) =>
+					item.Name.toLowerCase().includes('vegan') ||
+					item.Name.toLowerCase().includes('vegetarian') ||
+					item.Description__c?.toLowerCase().includes('vegan') ||
+					item.Description__c?.toLowerCase().includes('vegetarian')
+			);
+		}
 
-        this.filteredItems = filtered;
-    }
+		// Apply spicy filter
+		if (this.showSpicy) {
+			filtered = filtered.filter(
+				(item) =>
+					item.Name.toLowerCase().includes('spicy') ||
+					item.Name.toLowerCase().includes('hot') ||
+					item.Description__c?.toLowerCase().includes('spicy') ||
+					item.Description__c?.toLowerCase().includes('hot')
+			);
+		}
 
-    get selectedCategoryName() {
-        if (!this.selectedCategoryId || this.categories.length === 0) {
-            return '';
-        }
-        const selectedCat = this.categories.find(cat => cat.id === this.selectedCategoryId);
-        return selectedCat ? selectedCat.Name : '';
-    }
+		this.filteredItems = filtered;
+	}
 
-    get hasError() {
-        return this.error !== null;
-    }
+	get selectedCategoryName() {
+		if (!this.selectedCategoryId || this.categories.length === 0) {
+			return '';
+		}
+		const selectedCat = this.categories.find((cat) => cat.id === this.selectedCategoryId);
+		return selectedCat ? selectedCat.Name : '';
+	}
 
-    get hasItems() {
-        return this.filteredItems && this.filteredItems.length > 0;
-    }
+	get hasError() {
+		return this.error !== null;
+	}
 
-    get itemsCount() {
-        return this.filteredItems ? this.filteredItems.length : 0;
-    }
+	get hasItems() {
+		return this.filteredItems && this.filteredItems.length > 0;
+	}
+
+	get itemsCount() {
+		return this.filteredItems ? this.filteredItems.length : 0;
+	}
 }

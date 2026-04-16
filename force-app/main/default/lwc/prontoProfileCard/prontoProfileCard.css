@@ -1,134 +1,134 @@
 .hero-container {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    background-color: #f3f3f3;
+	position: relative;
+	width: 100%;
+	height: 180px;
+	background-color: var(--slds-g-color-surface-2, #f3f3f3);
 }
 
 .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: bottom;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: bottom;
 }
 
 /* Card Styles */
 .profile-card {
-    border-radius: 20px;
-    overflow: hidden; /* Ensures the hero image corners are rounded */
+	border-radius: var(--slds-g-radius-border-4, 20px);
+	overflow: hidden; /* Ensures the hero image corners are rounded */
 }
 
 .card-content {
-    background-size: cover;
-    background-position: center;
-    color: white;
+	background-size: cover;
+	background-position: center;
+	color: var(--slds-g-color-on-accent-1, white);
 }
 
 /* Partner Account Theme */
 .partner-account-theme .card-content {
-    background: linear-gradient(135deg, #417A97, #2d566a);
+	background: linear-gradient(135deg, #417a97, #2d566a);
 }
 
 /* Customer Account Theme */
 .customer-account-theme .card-content {
-    background: linear-gradient(135deg, #AD343E, #7c252d);
+	background: linear-gradient(135deg, #ad343e, #7c252d);
 }
 
 /* Lead Theme */
 .default-theme .card-content {
-    background: linear-gradient(135deg, #417A97, #2d566a);
+	background: linear-gradient(135deg, #417a97, #2d566a);
 }
 
 /* Headline Styles */
 .record-headline {
-    padding:  16px 16px 16px 0px;
+	padding: var(--slds-g-spacing-4, 16px) var(--slds-g-spacing-4, 16px) var(--slds-g-spacing-4, 16px) 0px;
 }
 
 .record-heading {
-    font-size: 1.25rem;
-    font-weight: 700;
+	font-size: var(--slds-g-font-scale-3, 1.25rem);
+	font-weight: var(--slds-g-font-weight-7, 700);
 }
 
-.record-headline>div:last-child {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 400;
+.record-headline > div:last-child {
+	font-size: var(--slds-g-font-scale-1, 0.875rem);
+	color: color-mix(in oklab, var(--slds-g-color-on-accent-1, white), transparent 20%);
+	font-weight: var(--slds-g-font-weight-4, 400);
 }
 
 /* Headline Adjustments */
 .account-headline {
-    margin-left: 82px;
+	margin-left: 82px;
 }
 
 .account-heading {
-    font-size: 26px;
+	font-size: 26px;
 }
 
 /* Section Styles */
 .section-heading {
-    font-size: 14px;
-    width: 95%;
-    font-weight: 700;
-    color: white;
-    padding-bottom: 5px;
+	font-size: var(--slds-g-font-scale-1, 14px);
+	width: 95%;
+	font-weight: var(--slds-g-font-weight-7, 700);
+	color: var(--slds-g-color-on-accent-1, white);
+	padding-bottom: 5px;
 }
 
 .insight-icon {
-    vertical-align: middle;
-    --sds-c-icon-color-foreground: white;
-    --sds-c-icon-color-background: transparent;
-    margin-right: 0.5rem;
+	vertical-align: middle;
+	--slds-c-icon-color-foreground: white;
+	--slds-c-icon-color-background: transparent;
+	margin-right: var(--slds-g-spacing-2, 0.5rem);
 }
 
 /* White bottom border in each section */
-.slds-border_bottom {
-    padding-bottom: 10px;
-    margin-bottom: -10px;
+.prontoProfileCard-borderBottom {
+	padding-bottom: 10px;
+	margin-bottom: -10px;
 }
 
 /* Example Card Container */
 .homeowner-card {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
-    border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 10px;
+	border-radius: var(--slds-g-radius-border-2, 8px);
 }
 
 /* Field Container */
 .field-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 .icon-heading {
-    width: 5%;
-    margin-top: -10px;
-  }
+	width: 5%;
+	margin-top: -10px;
+}
 
 /* Field Styles */
-.slds-form-element__label {
-    color: rgba(255, 255, 255, 0.8);
+.prontoProfileCard-formLabel {
+	color: color-mix(in oklab, var(--slds-g-color-on-accent-1, white), transparent 20%);
 }
 
-.slds-form-element__static {
-    font-weight: 400;
+.prontoProfileCard-formStatic {
+	font-weight: var(--slds-g-font-weight-4, 400);
 }
 
-.slds-form-element__static>strong {
-    font-weight: 700;
-    color: white;
+.prontoProfileCard-formStatic > strong {
+	font-weight: var(--slds-g-font-weight-7, 700);
+	color: var(--slds-g-color-on-accent-1, white);
 }
 
 .font-color-white {
-    color: white !important;
+	color: white !important;
 }
 
-.slds-p-around_small {
-    padding: 1rem;
+.prontoProfileCard-pAroundSmall {
+	padding: var(--slds-g-spacing-4, 1rem);
 }
 
-.slds-p-bottom_x-small {
-    padding-bottom: 0.5rem;
+.prontoProfileCard-pBottomXSmall {
+	padding-bottom: var(--slds-g-spacing-2, 0.5rem);
 }

@@ -2,17 +2,17 @@ import { LightningElement, api } from 'lwc';
 //import getPageEngagements from '@salesforce/apex/GetEngagements.getPageEngagements';
 
 export default class RealTimeEngagements extends LightningElement {
-    @api recordId;
-    allEngagements = [];
-    error;
-    isLoading = true;
-    showModal = false;
+	@api recordId;
+	allEngagements = [];
+	error;
+	isLoading = true;
+	showModal = false;
 
-    // Pagination
-    currentPage = 1;
-    pageSize = 5;
+	// Pagination
+	currentPage = 1;
+	pageSize = 5;
 
-    /*
+	/*
 
 
     connectedCallback() {
@@ -172,5 +172,4 @@ export default class RealTimeEngagements extends LightningElement {
     }
 
     */
-
 }

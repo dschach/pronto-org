@@ -2,64 +2,64 @@
 
 /* Timeline styles for proper line connection */
 .slds-timeline {
-    position: relative;
+	position: relative;
 }
 
 .slds-timeline::before {
-    content: '';
-    position: absolute;
-    left: 1rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #d8dde6;
-    z-index: 1;
+	content: '';
+	position: absolute;
+	left: var(--slds-g-spacing-4, 1rem);
+	top: 0;
+	bottom: 0;
+	width: var(--slds-g-sizing-border-2, 2px);
+	background-color: var(--slds-g-color-surface-container-3, #d8dde6);
+	z-index: 1;
 }
 
 .timeline-item {
-    position: relative;
-    padding-bottom: 1rem;
+	position: relative;
+	padding-bottom: var(--slds-g-spacing-4, 1rem);
 }
 
 .timeline-item:last-child {
-    padding-bottom: 0;
+	padding-bottom: 0;
 }
 
-.slds-timeline__icon {
-    position: relative;
-    z-index: 2;
-    background-color: white;
-    border: 2px solid #d8dde6;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.realTimeEngagements-timelineIcon {
+	position: relative;
+	z-index: 2;
+	background-color: var(--slds-g-color-surface-1, white);
+	border: var(--slds-g-sizing-border-2, 2px) solid var(--slds-g-color-border-1, #d8dde6);
+	border-radius: 50%;
+	width: var(--slds-g-sizing-9, 2rem);
+	height: var(--slds-g-sizing-9, 2rem);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.slds-timeline__icon .slds-icon {
-    width: 1rem;
-    height: 1rem;
+.realTimeEngagements-timelineIcon lightning-icon {
+	width: var(--slds-g-sizing-base, 1rem);
+	height: var(--slds-g-sizing-base, 1rem);
 }
 
 /* Ensure proper spacing and alignment */
-.slds-media__figure {
-    margin-right: 0.75rem;
+.realTimeEngagements-mediaFigure {
+	margin-right: var(--slds-g-spacing-3, 0.75rem);
 }
 
-.slds-timeline__trigger {
-    min-height: 2rem;
-    align-items: flex-start;
+.realTimeEngagements-timelineTrigger {
+	min-height: var(--slds-g-sizing-9, 2rem);
+	align-items: flex-start;
 }
 
-.slds-timeline__date {
-    white-space: nowrap;
-    color: #706e6b;
-    font-size: 0.75rem;
+.realTimeEngagements-timelineDate {
+	white-space: nowrap;
+	color: var(--slds-g-color-on-surface-1, #706e6b);
+	font-size: var(--slds-g-font-scale-neg-1, 0.75rem);
 }
 
 /* Content styling */
 .timeline-content {
-    padding-top: 0.125rem;
+	padding-top: 0.125rem;
 }

@@ -2,35 +2,35 @@ import { LightningElement, api, wire, track } from 'lwc';
 //import getRelatedIndividuals from '@salesforce/apex/GetRelatedIndividuals.getRelatedIndividuals';
 
 export default class RelatedIndividualsModal extends LightningElement {
-    @api isOpen = false;
-    @api recordId; // Contact or Lead Id
-    @api debugMode = false; // Changed from true to false to comply with LWC standards
+	@api isOpen = false;
+	@api recordId; // Contact or Lead Id
+	@api debugMode = false; // Changed from true to false to comply with LWC standards
 
-    @track data = [];
-    @track columns = [
-        { label: 'Source ID', fieldName: 'sourceId', type: 'text' },
-        { label: 'Source Type', fieldName: 'sourceType', type: 'text', initialWidth: 130 },
-        { label: 'First Name', fieldName: 'firstName', type: 'text', initialWidth: 130 },
-        { label: 'Last Name', fieldName: 'lastName', type: 'text', initialWidth: 130 },
-        { label: 'Email', fieldName: 'email', type: 'email', initialWidth: 230 },
-        { label: 'Phone', fieldName: 'phone', type: 'phone' },
-        { label: 'Created Date', fieldName: 'createdDate', type: 'date' },
-        { label: 'Unified ID', fieldName: 'unifiedId', type: 'text', initialWidth: 300 },
-        {
-            label: 'View Record',
-            fieldName: 'recordUrl',
-            type: 'url',
-            typeAttributes: {
-                label: 'View',
-                target: '_blank'
-            }
-        }
-    ];
-    @track error;
-    @track isLoading = false;
-    @track rawData;
+	@track data = [];
+	@track columns = [
+		{ label: 'Source ID', fieldName: 'sourceId', type: 'text' },
+		{ label: 'Source Type', fieldName: 'sourceType', type: 'text', initialWidth: 130 },
+		{ label: 'First Name', fieldName: 'firstName', type: 'text', initialWidth: 130 },
+		{ label: 'Last Name', fieldName: 'lastName', type: 'text', initialWidth: 130 },
+		{ label: 'Email', fieldName: 'email', type: 'email', initialWidth: 230 },
+		{ label: 'Phone', fieldName: 'phone', type: 'phone' },
+		{ label: 'Created Date', fieldName: 'createdDate', type: 'date' },
+		{ label: 'Unified ID', fieldName: 'unifiedId', type: 'text', initialWidth: 300 },
+		{
+			label: 'View Record',
+			fieldName: 'recordUrl',
+			type: 'url',
+			typeAttributes: {
+				label: 'View',
+				target: '_blank'
+			}
+		}
+	];
+	@track error;
+	@track isLoading = false;
+	@track rawData;
 
-    /*
+	/*
     // Internal debug mode - can be enabled for testing
     get isDebugMode() {
         return this.debugMode || false; // You can change this to true for debugging

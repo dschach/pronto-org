@@ -1,65 +1,65 @@
-.slds-card_boundary {
-    border: 1px solid #e5e5e5;
-    border-radius: 0.25rem;
+.menuBrowser-cardBoundary {
+	border: var(--slds-g-sizing-border-1, 1px) solid var(--slds-g-color-border-1, #e5e5e5);
+	border-radius: var(--slds-g-radius-border-1, 0.25rem);
 }
 
-.slds-card__header-title {
-    font-size: 1.125rem;
-    font-weight: 600;
+.menuBrowser-cardHeaderTitle {
+	font-size: 1.125rem;
+	font-weight: var(--slds-g-font-weight-6, 600);
 }
 
-.slds-badge_lightest {
-    background-color: #f4f6f9;
-    color: #080707;
+.menuBrowser-badgeLightest {
+	background-color: var(--slds-g-color-surface-2, #f4f6f9);
+	color: var(--slds-g-color-neutral-base-0, #080707);
 }
 
 .slds-image_centered {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
-.slds-button_stretch {
-    width: 100%;
-    text-align: left;
+.menuBrowser-buttonStretch {
+	width: 100%;
+	text-align: left;
 }
 
-.slds-button_neutral:hover {
-    background-color: #f4f6f9;
+.menuBrowser-buttonNeutral:hover {
+	background-color: var(--slds-g-color-surface-2, #f4f6f9);
 }
 
-.slds-button_neutral:focus {
-    box-shadow: 0 0 0 2px #0070d2;
-    outline: none;
+.menuBrowser-buttonNeutral:focus {
+	box-shadow: 0 0 0 2px #0070d2;
+	outline: none;
 }
 
-.slds-scrollable_y {
-    overflow-y: auto;
+.menuBrowser-scrollableY {
+	overflow-y: auto;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .slds-col {
-        width: 100%;
-    }
-    
-    .slds-card__header-title {
-        font-size: 1rem;
-    }
-    
-    .slds-text-title_caps {
-        font-size: 0.75rem;
-    }
+	.menuBrowser-col {
+		width: 100%;
+	}
+
+	.menuBrowser-cardHeaderTitle {
+		font-size: var(--slds-g-font-scale-2, 1rem);
+	}
+
+	.menuBrowser-textTitleCaps {
+		font-size: var(--slds-g-font-scale-neg-1, 0.75rem);
+	}
 }
 
 /* Loading spinner centering */
-.slds-text-align_center {
-    text-align: center;
+.menuBrowser-textAlignCenter {
+	text-align: center;
 }
 
 /* Card spacing */
-.slds-card__body {
-    padding: 1rem;
+.menuBrowser-cardBody {
+	padding: var(--slds-g-spacing-4, 1rem);
 }
 
-.slds-card__header {
-    padding: 1rem;
+.menuBrowser-cardHeader {
+	padding: var(--slds-g-spacing-4, 1rem);
 }

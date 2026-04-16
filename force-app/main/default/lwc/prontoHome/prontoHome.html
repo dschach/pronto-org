@@ -1,68 +1,83 @@
 <template>
-  <article class="slds-card">
-    <div>
-      <div class="slds-grid slds-wrap slds-grid--vertical-stretch">
-        <div class="slds-col slds-size_1-of-1 slds-border_left slds-p-around_medium">
-          <!-- BEGIN HOME SECTION -->
-          <template lwc:if={showHome}>
-            <!-- INTRO -->
-            <div class="slds-p-bottom_medium">
-              <h2 class="slds-text-heading_large slds-text-color_default slds-p-bottom_small">
-                <strong>Welcome to the Agentforce Now – Agentforce Builder Workshop</strong>
-              </h2>
-              <div class="slds-text-body_regular slds-text-color_default slds-p-bottom_small">
-                Join this hands-on Agentforce Now workshop to learn how to design, script, and test AI agents with the new
-                Agentforce Builder experience.
-              </div>
+	<article class="slds-card">
+		<div>
+			<div class="slds-grid slds-wrap slds-grid--vertical-stretch">
+				<div class="slds-col slds-size_1-of-1 slds-border_left slds-p-around_medium">
+					<!-- BEGIN HOME SECTION -->
+					<template lwc:if={showHome}>
+						<!-- INTRO -->
+						<div class="slds-p-bottom_medium">
+							<h2 class="slds-text-heading_large slds-text-color_default slds-p-bottom_small">
+								<strong>Welcome to the Agentforce Now – Agentforce Builder Workshop</strong>
+							</h2>
+							<div class="slds-text-body_regular slds-text-color_default slds-p-bottom_small">
+								Join this hands-on Agentforce Now workshop to learn how to design, script, and test AI agents with the
+								new Agentforce Builder experience.
+							</div>
 
-              <div class="slds-text-heading_medium slds-text-color_default slds-p-bottom_small">Workshop Overview</div>
-              <div class="slds-text-body_regular slds-text-color_default slds-p-bottom_small">
-                Get hands-on with the new <strong>Agentforce Builder</strong> — a streamlined way to generate, refine, and control
-                agent behavior in a single canvas using natural language and <strong>Agent Script</strong>. You’ll see how AI
-                assistance and human-readable scripting come together to deliver scalable, reliable, and secure agents across the
-                Agentforce 360 Platform.
-              </div>
-              <div class="slds-text-body_regular slds-text-color_default slds-p-bottom_small slds-border_bottom slds-m-bottom_small">
-                Use this hub to quickly access event resources, reference materials, and next steps as you explore Agentforce
-                Builder during the workshop.
-              </div>
-            </div>
+							<div class="slds-text-heading_medium slds-text-color_default slds-p-bottom_small">Workshop Overview</div>
+							<div class="slds-text-body_regular slds-text-color_default slds-p-bottom_small">
+								Get hands-on with the new <strong>Agentforce Builder</strong> — a streamlined way to generate, refine,
+								and control agent behavior in a single canvas using natural language and <strong>Agent Script</strong>.
+								You’ll see how AI assistance and human-readable scripting come together to deliver scalable, reliable,
+								and secure agents across the Agentforce 360 Platform.
+							</div>
+							<div
+								class="slds-text-body_regular slds-text-color_default slds-p-bottom_small slds-border_bottom slds-m-bottom_small">
+								Use this hub to quickly access event resources, reference materials, and next steps as you explore
+								Agentforce Builder during the workshop.
+							</div>
+						</div>
 
-            <!-- CARDS -->
-            <div class="slds-grid slds-grid_vertical-stretch slds-gutters">
-              <!-- CARD: WORKSHOP INSTRUCTIONS -->
-              <div class="slds-col slds-size_1-of-2 slds-grid slds-grid_vertical-stretch">
-                <div class="slds-col slds-box slds-box_small slds-text-align_center box-shadow">
-                  <div class="slds-p-bottom_small">
-                    <lightning-icon size="large" icon-name="standard:knowledge"></lightning-icon>
-                  </div>
-                  <p class="slds-text-color_default"><strong>Agentforce Builder Workshop Instructions</strong></p>
-                  <p class="slds-text-color_default slds-p-bottom_small">Open the official hands-on Agentforce workshop guide.</p>
-                  <lightning-button label="Open" data-type="url"
-                    data-url="https://developer.salesforce.com/workshops/agentforce-workshop"
-                    icon-name="utility:chevronright" icon-position="right" onclick={view} name="guide"
-                    variant="brand"></lightning-button>
-                </div>
-              </div>
-              <!-- CARD: AGENT SCRIPT RECIPES -->
-              <div class="slds-col slds-size_1-of-2 slds-grid slds-grid_vertical-stretch">
-                <div class="slds-col slds-box slds-box_small slds-text-align_center box-shadow">
-                  <div class="slds-p-bottom_small">
-                    <lightning-icon size="large" icon-name="standard:agent_astro"></lightning-icon>
-                  </div>
-                  <p class="slds-text-color_default"><strong>Agent Script Recipes</strong></p>
-                  <p class="slds-text-color_default slds-p-bottom_small">Browse sample agents and patterns for Agent Script.</p>
-                  <lightning-button label="Open" data-type="url"
-                    data-url="https://developer.salesforce.com/sample-apps/agent-script-recipes/getting-started/overview"
-                    icon-name="utility:chevronright" icon-position="right" onclick={view} name="guide"
-                    variant="brand"></lightning-button>
-                </div>
-              </div>
-            </div>
-          </template>
-          <!-- END HOME SECTION -->
-        </div>
-      </div>
-    </div>
-  </article>
+						<!-- CARDS -->
+						<div class="slds-grid slds-grid_vertical-stretch slds-gutters">
+							<!-- CARD: WORKSHOP INSTRUCTIONS -->
+							<div class="slds-col slds-size_1-of-2 slds-grid slds-grid_vertical-stretch">
+								<div class="slds-col slds-box slds-box_small slds-text-align_center box-shadow">
+									<div class="slds-p-bottom_small">
+										<lightning-icon size="large" icon-name="standard:knowledge"></lightning-icon>
+									</div>
+									<p class="slds-text-color_default"><strong>Agentforce Builder Workshop Instructions</strong></p>
+									<p class="slds-text-color_default slds-p-bottom_small">
+										Open the official hands-on Agentforce workshop guide.
+									</p>
+									<lightning-button
+										label="Open"
+										data-type="url"
+										data-url="https://developer.salesforce.com/workshops/agentforce-workshop"
+										icon-name="utility:chevronright"
+										icon-position="right"
+										onclick={view}
+										name="guide"
+										variant="brand"></lightning-button>
+								</div>
+							</div>
+							<!-- CARD: AGENT SCRIPT RECIPES -->
+							<div class="slds-col slds-size_1-of-2 slds-grid slds-grid_vertical-stretch">
+								<div class="slds-col slds-box slds-box_small slds-text-align_center box-shadow">
+									<div class="slds-p-bottom_small">
+										<lightning-icon size="large" icon-name="standard:agent_astro"></lightning-icon>
+									</div>
+									<p class="slds-text-color_default"><strong>Agent Script Recipes</strong></p>
+									<p class="slds-text-color_default slds-p-bottom_small">
+										Browse sample agents and patterns for Agent Script.
+									</p>
+									<lightning-button
+										label="Open"
+										data-type="url"
+										data-url="https://developer.salesforce.com/sample-apps/agent-script-recipes/getting-started/overview"
+										icon-name="utility:chevronright"
+										icon-position="right"
+										onclick={view}
+										name="guide"
+										variant="brand"></lightning-button>
+								</div>
+							</div>
+						</div>
+					</template>
+					<!-- END HOME SECTION -->
+				</div>
+			</div>
+		</div>
+	</article>
 </template>
