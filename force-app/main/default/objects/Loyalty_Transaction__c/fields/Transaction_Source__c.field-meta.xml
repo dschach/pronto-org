@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transaction_Source__c</fullName>
+    <description>Tracks where or how the transaction occurred.</description>
+    <label>Transaction Source</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Order</fullName>
+                <default>false</default>
+                <label>Order</label>
+            </value>
+            <value>
+                <fullName>Promotion</fullName>
+                <default>false</default>
+                <label>Promotion</label>
+            </value>
+            <value>
+                <fullName>Manual Adjustment</fullName>
+                <default>false</default>
+                <label>Manual Adjustment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
