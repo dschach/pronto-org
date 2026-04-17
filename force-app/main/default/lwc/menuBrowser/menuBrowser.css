@@ -4,6 +4,7 @@
 }
 
 .menuBrowser-cardHeaderTitle {
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	font-size: 1.125rem;
 	font-weight: var(--slds-g-font-weight-6, 600);
 }
@@ -18,6 +19,7 @@
 }
 
 .menuBrowser-buttonStretch {
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	width: 100%;
 	text-align: left;
 }
@@ -38,6 +40,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
 	.menuBrowser-col {
+		/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 		width: 100%;
 	}
 

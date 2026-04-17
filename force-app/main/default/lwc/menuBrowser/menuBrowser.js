@@ -1,4 +1,4 @@
-import { LightningElement, track, api } from 'lwc';
+import { LightningElement, api, track } from 'lwc';
 import getMenuCategories from '@salesforce/apex/MenuBrowserController.getMenuCategories';
 import getMenuItems from '@salesforce/apex/MenuBrowserController.getMenuItems';
 
@@ -26,14 +26,14 @@ export default class MenuBrowser extends LightningElement {
 
 		const menuId = this.recordId;
 
-		getMenuCategories({ menuId: menuId })
+		getMenuCategories({ menuId })
 			.then((result) => {
 				this.categories = result;
 				// Set first category as default selected
 				if (this.categories.length > 0) {
 					this.selectedCategoryId = this.categories[0].id;
 				}
-				return getMenuItems({ menuId: menuId });
+				return getMenuItems({ menuId });
 			})
 			.then((result) => {
 				this.items = result;
@@ -42,7 +42,6 @@ export default class MenuBrowser extends LightningElement {
 			})
 			.catch((error) => {
 				this.error = error;
-				console.error('Error loading menu data:', error);
 			})
 			.finally(() => {
 				this.loading = false;

@@ -371,6 +371,7 @@
 		message="Use sharing rules to grant record access rather than View All or Modify All even on module-specific objects."
 		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
 		<description>Profiles and Permission Sets should not have modify or view all records permission</description>
+		<priority>2</priority>
 		<properties>
 			<property name="xpath">
 				<value><![CDATA[  
@@ -398,7 +399,7 @@
 						]
 						]]> </value>
 			</property>
-			<property name="violationSuppressXPath" value="./ancestor-or-self::Profile/custom/text[@Text='false']" />
+			<property name="violationSuppressXPath" value="(./ancestor-or-self::Profile/custom/text[@Text='false']) or (contains(pmd:fileName(), '__'))" />
 		</properties>
 	</rule>
 

@@ -6,7 +6,7 @@
   "scripts": {
     "apex:test": "mkdir -p testresults && rm testresults/* && sf apex run test --test-level RunLocalTests --output-dir testresults --result-format human --code-coverage",
     "codeanalyzer:config": "echo 'y' | sf code-analyzer config --include-unmodified-rules --rule-selector all --config-file code-analyzer.yml --output-file code-analyzer.yml",
-    "lint": "eslint **/{aura,lwc}/**/*.js",
+    "lint": "eslint --no-error-on-unmatched-pattern **/{aura,lwc}/**/*.js",
     "myinfo": "sf org display --verbose",
     "precommit": "lint-staged",
     "prepare": "husky",

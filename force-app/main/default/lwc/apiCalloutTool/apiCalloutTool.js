@@ -10,10 +10,12 @@ export default class ApiCalloutTool extends LightningModal {
 	@track response = null;
 
 	get formattedResponse() {
-		if (!this.response) return '';
+		if (!this.response) {
+			return '';
+		}
 		try {
 			return JSON.stringify(this.response, null, 2);
-		} catch (e) {
+		} catch {
 			return this.response;
 		}
 	}
@@ -60,8 +62,6 @@ export default class ApiCalloutTool extends LightningModal {
 				this.response = result;
 			})
 			.catch((error) => {
-				console.error(error);
-				console.error('API callout error:', error);
 				this.error = error.message || 'An error occurred while making the API callout';
 			})
 			.finally(() => {

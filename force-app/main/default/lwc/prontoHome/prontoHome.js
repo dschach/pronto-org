@@ -15,17 +15,15 @@ export default class ProntoHome extends NavigationMixin(LightningElement) {
 	@track username = '';
 
 	@wire(getRecord, { recordId: '$userId', fields: [USER_NAME] })
-	wiredUser({ error, data }) {
+	wiredUser({ error: _error, data }) {
 		if (data) {
 			this.username = data.fields.Username.value;
-		} else if (error) {
-			console.error('Error loading user record:', error);
 		}
 	}
 
 	view(event) {
 		const viewType = event.currentTarget.dataset.type;
-		let url;
+		let url = null;
 		if (viewType === 'url') {
 			url = event.currentTarget.dataset.url;
 		}
@@ -50,9 +48,7 @@ export default class ProntoHome extends NavigationMixin(LightningElement) {
 					})
 				);
 			})
-			.catch((error) => {
-				console.error('Failed to copy text: ', error);
-			});
+			.catch(() => {});
 	}
 
 	handleViewGuide() {

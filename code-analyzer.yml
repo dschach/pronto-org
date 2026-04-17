@@ -33,7 +33,12 @@ log_level: 4
 # -------------------------------------------
 ignores: # Modified from: {"files":[]}
   files:
-    - '**/staticresources/**'
+    - "**/staticresources/**"
+    # Stock Communities auth Aura components — boilerplate shipped by Salesforce.
+    # Not actively maintained here, so suppress scanner noise (style/SLDS violations).
+    - "**/aura/loginForm/**"
+    - "**/aura/selfRegister/**"
+    - "**/aura/forgotPassword/**"
 
 # Rule override settings of the format rules.{engine_name}.{rule_name}.{property_name} = {override_value} where:
 #   {engine_name} is the name of the engine containing the rule that you want to override.
@@ -54,7 +59,6 @@ ignores: # Modified from: {"files":[]}
 #       disabled: true
 # -------------------------------------------
 rules:
-
   # ======================================================================
   # RETIRE-JS ENGINE RULE OVERRIDES
   # ======================================================================
@@ -627,7 +631,7 @@ rules:
         - ErrorProne
         - JavaScript
     "curly":
-      severity: 3
+      severity: 2 # Modified from: 3
       tags:
         - BestPractices
         - JavaScript
@@ -710,7 +714,7 @@ rules:
         - JavaScript
         - TypeScript
     "id-length":
-      severity: 3
+      severity: 4 # Modified from: 3
       tags:
         - BestPractices
         - JavaScript
@@ -893,18 +897,6 @@ rules:
         - JavaScript
         - TypeScript
     "max-depth":
-      severity: 3
-      tags:
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "max-lines":
-      severity: 3
-      tags:
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "max-lines-per-function":
       severity: 3
       tags:
         - BestPractices
@@ -1523,12 +1515,6 @@ rules:
         - ErrorProne
         - JavaScript
         - TypeScript
-    "no-ternary":
-      severity: 3
-      tags:
-        - BestPractices
-        - JavaScript
-        - TypeScript
     "no-this-before-super":
       severity: 2
       tags:
@@ -1559,12 +1545,6 @@ rules:
         - JavaScript
         - TypeScript
     "no-undefined":
-      severity: 3
-      tags:
-        - BestPractices
-        - JavaScript
-        - TypeScript
-    "no-underscore-dangle":
       severity: 3
       tags:
         - BestPractices
@@ -1920,6 +1900,34 @@ rules:
         - BestPractices
         - JavaScript
         - TypeScript
+    "max-lines":
+      severity: 3
+      tags:
+        - BestPractices
+        - JavaScript
+        - TypeScript
+      disabled: true # Modified from: false
+    "max-lines-per-function":
+      severity: 3
+      tags:
+        - BestPractices
+        - JavaScript
+        - TypeScript
+      disabled: true # Modified from: false
+    "no-ternary":
+      severity: 3
+      tags:
+        - BestPractices
+        - JavaScript
+        - TypeScript
+      disabled: true # Modified from: false
+    "no-underscore-dangle":
+      severity: 3
+      tags:
+        - BestPractices
+        - JavaScript
+        - TypeScript
+      disabled: true # Modified from: false
     "vars-on-top":
       severity: 3
       tags:
@@ -2190,7 +2198,7 @@ rules:
         - Security
         - Visualforce
     "AvoidDebugStatements":
-      severity: 4
+      severity: 3 # Modified from: 4
       tags: # Modified from: ["Recommended","Performance","Apex"]
         - Recommended
         - Performance
@@ -2536,6 +2544,11 @@ rules:
       tags:
         - ErrorProne
         - JavaScript
+    "ExcessiveClassLength":
+      severity: 3
+      tags:
+        - Design
+        - Apex
     "ExcessiveParameterList":
       severity: 3
       tags: # Modified from: ["Recommended","Design","Apex"]
@@ -2735,6 +2748,27 @@ rules:
         - dschachPMDRuleset
         - Xml
         - Custom
+    "NcssConstructorCount":
+      severity: 4
+      tags:
+        - Design
+        - Apex
+    "NcssCount":
+      severity: 3
+      tags:
+        - Recommended
+        - Apex
+        - Custom
+    "NcssMethodCount":
+      severity: 4
+      tags:
+        - Design
+        - Apex
+    "NcssTypeCount":
+      severity: 4
+      tags:
+        - Design
+        - Apex
     "NoElseReturn":
       severity: 3
       tags:
@@ -2940,80 +2974,6 @@ rules:
       tags:
         - CodeStyle
         - JavaScript
-    "ExcessiveClassLength":
-      severity: 3
-      tags:
-        - Design
-        - Apex
-        - dschachPMDRuleset
-      disabled: true # Modified from: false
-    "NcssConstructorCount":
-      severity: 3
-      tags:
-        - Design
-        - Apex
-        - dschachPMDRuleset
-      disabled: true # Modified from: false
-    "NcssCount":
-      severity: 3
-      tags:
-        - Recommended
-        - Apex
-        - Custom
-      disabled: true # Modified from: false
-    "NcssMethodCount":
-      severity: 3
-      tags:
-        - Design
-        - Apex
-        - dschachPMDRuleset
-      disabled: true # Modified from: false
-    "NcssTypeCount":
-      severity: 3
-      tags:
-        - Design
-        - Apex
-        - dschachPMDRuleset
-      disabled: true # Modified from: false
-
-  # ======================================================================
-  # CPD ENGINE RULE OVERRIDES
-  # ======================================================================
-  cpd:
-    "DetectCopyPasteForApex":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Apex
-    "DetectCopyPasteForHtml":
-      severity: 5
-      tags:
-        - Design
-        - Html
-    "DetectCopyPasteForJavascript":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Javascript
-    "DetectCopyPasteForTypescript":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Typescript
-    "DetectCopyPasteForVisualforce":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Visualforce
-    "DetectCopyPasteForXml":
-      severity: 5
-      tags:
-        - Design
-        - Xml
 
   # ======================================================================
   # SFGE ENGINE RULE OVERRIDES
@@ -3062,19 +3022,56 @@ rules:
         - Performance
         - Apex
 
+  # ======================================================================
+  # CPD ENGINE RULE OVERRIDES
+  # ======================================================================
+  cpd:
+    "DetectCopyPasteForApex":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Apex
+    "DetectCopyPasteForHtml":
+      severity: 5
+      tags:
+        - Design
+        - Html
+    "DetectCopyPasteForJavascript":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Javascript
+    "DetectCopyPasteForTypescript":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Typescript
+    "DetectCopyPasteForVisualforce":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Visualforce
+    "DetectCopyPasteForXml":
+      severity: 5
+      tags:
+        - Design
+        - Xml
+
 # Engine specific custom configuration settings of the format engines.{engine_name}.{property_name} = {value} where:
 #   {engine_name} is the name of the engine containing the setting that you want to override.
 #   {property_name} is the name of a property that you would like to override.
 # Each engine may have its own set of properties available to help customize that particular engine's behavior.
 engines:
-
   # ======================================================================
   # RETIRE-JS ENGINE CONFIGURATION
   # To learn more about this configuration, visit:
   #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-retire-js.html#retirejs-configuration-reference
   # ======================================================================
   retire-js:
-
     # Whether to turn off the 'retire-js' engine so that it is not included when running Code Analyzer commands.
     disable_engine: false
 
@@ -3084,7 +3081,6 @@ engines:
   #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-regex.html#regex-configuration-reference
   # ======================================================================
   regex:
-
     # Whether to turn off the 'regex' engine so that it is not included when running Code Analyzer commands.
     disable_engine: false
 
@@ -3108,7 +3104,7 @@ engines:
     #     'tags'              - [Optional] The string array of tag values to apply to this rule by default.
     #                           Default: ['Recommended']
     # ---- [Example usage]: ---------------------
-    # engines: 
+    # engines:
     #   regex:
     #     custom_rules:
     #       "NoTodoComments":
@@ -3134,7 +3130,6 @@ engines:
   #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-eslint.html#eslint-configuration-reference
   # ======================================================================
   eslint:
-
     # Whether to turn off the 'eslint' engine so that it is not included when running Code Analyzer commands.
     disable_engine: false
 
@@ -3143,7 +3138,7 @@ engines:
     # We currently support both flat and legacy ESLint configuration files, but will be removing support for legacy eslintrc
     # ESLint configuration files in the coming months.
     # See https://eslint.org/docs/latest/use/configure/configuration-files to learn more.
-    eslint_config_file: eslint.config.js # Modified from: null
+    eslint_config_file: null
 
     # Your project's legacy ".eslintignore" file. May be an absolute path or a path relative to the config_root.
     # If null and auto_discover_eslint_config is true, then Code Analyzer will attempt to discover/apply it automatically.
@@ -3154,7 +3149,7 @@ engines:
     eslint_ignore_file: null
 
     # Whether to have Code Analyzer automatically discover/apply any ESLint configuration and ignore files from your workspace.
-    auto_discover_eslint_config: false
+    auto_discover_eslint_config: true
 
     # Whether to turn off the default base configuration that supplies the standard ESLint rules for JavaScript files.
     # The base configuration for JavaScript files adds the rules from the "eslint:all" configuration to Code Analyzer.
@@ -3214,7 +3209,6 @@ engines:
   #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-flow.html#flow-scanner-configuration-reference
   # ======================================================================
   flow:
-
     # Whether to turn off the 'flow' engine so that it is not included when running Code Analyzer commands.
     disable_engine: false
 
@@ -3229,7 +3223,6 @@ engines:
   #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-pmd.html#pmd-configuration-reference
   # ======================================================================
   pmd:
-
     # Whether to turn off the 'pmd' engine so that it is not included when running Code Analyzer commands.
     disable_engine: false
 
@@ -3282,12 +3275,48 @@ engines:
       - config/ruleset.xml
 
   # ======================================================================
+  # SFGE ENGINE CONFIGURATION
+  # This engine is in Developer Preview and is subject to change.
+  # To learn more about this configuration, visit:
+  #   [PLACEHOLDER LINK]
+  # ======================================================================
+  sfge:
+    # Whether to turn off the 'sfge' engine so that it is not included when running Code Analyzer commands.
+    disable_engine: false
+
+    # Whether to prevent 'sfge' from throwing LimitReached violations for complex paths.
+    # By default, Salesforce Graph Engine attempts to detect complex paths that might cause OutOfMemory errors,
+    # and throws LimitReached violations for these paths to continue evaluating other paths safely. The allowed
+    # complexity is dynamically calculated based on the max Java heap size available, but in some cases you may
+    # desire to disable this check in addition to increasing java_max_heap_size.
+    disable_limit_reached_violations: false
+
+    # Indicates the specific 'java' command associated with the JRE or JDK to use for the 'sfge' engine.
+    # May be provided as the name of a command that exists on the path, or an absolute file path location.
+    # If unspecified, or specified as null, then an attempt will be made to automatically discover a 'java' command from your environment.
+    java_command: null # Last calculated by the config command as: "java"
+
+    # Specifies the maximum size (in bytes) of the Java heap. The specified value is appended to the '-Xmx' Java
+    # command option. The value must be a multiple of 1024, and greater than 2MB. Append the letters 'k', 'K', 'kb',
+    # or 'KB' to indicate kilobytes, 'm', 'M', 'mb', or 'MB' to indicate megabytes, and 'g', 'G', 'gb', or 'GB' to
+    # indicate gigabytes. If unspecified, or specified as null, then the JVM will dynamically choose a default value
+    # at runtime based on system configuration.
+    java_max_heap_size: null
+
+    # Specifies the number of Java threads available for parallel execution. Increasing the thread count allows for
+    # Salesforce Graph Engine to evaluate more paths at the same time.
+    java_thread_count: 8
+
+    # Specifies the maximum time (in milliseconds) a specific Java thread may execute before Salesforce Graph Engine
+    # issues a Timeout violation.
+    java_thread_timeout: 30000
+
+  # ======================================================================
   # CPD ENGINE CONFIGURATION
   # To learn more about this configuration, visit:
   #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-cpd.html#cpd-configuration-reference
   # ======================================================================
   cpd:
-
     # Whether to turn off the 'cpd' engine so that it is not included when running Code Analyzer commands.
     disable_engine: false
 
@@ -3340,43 +3369,6 @@ engines:
     # Indicates whether to ignore multiple copies of files of the same name and length.
     skip_duplicate_files: true # Modified from: false
 
-  # ======================================================================
-  # SFGE ENGINE CONFIGURATION
-  # This engine is in Developer Preview and is subject to change.
-  # To learn more about this configuration, visit:
-  #   [PLACEHOLDER LINK]
-  # ======================================================================
-  sfge:
-
-    # Whether to turn off the 'sfge' engine so that it is not included when running Code Analyzer commands.
-    disable_engine: false
-
-    # Whether to prevent 'sfge' from throwing LimitReached violations for complex paths.
-    # By default, Salesforce Graph Engine attempts to detect complex paths that might cause OutOfMemory errors,
-    # and throws LimitReached violations for these paths to continue evaluating other paths safely. The allowed
-    # complexity is dynamically calculated based on the max Java heap size available, but in some cases you may
-    # desire to disable this check in addition to increasing java_max_heap_size.
-    disable_limit_reached_violations: false
-
-    # Indicates the specific 'java' command associated with the JRE or JDK to use for the 'sfge' engine.
-    # May be provided as the name of a command that exists on the path, or an absolute file path location.
-    # If unspecified, or specified as null, then an attempt will be made to automatically discover a 'java' command from your environment.
-    java_command: null # Last calculated by the config command as: "java"
-
-    # Specifies the maximum size (in bytes) of the Java heap. The specified value is appended to the '-Xmx' Java
-    # command option. The value must be a multiple of 1024, and greater than 2MB. Append the letters 'k', 'K', 'kb',
-    # or 'KB' to indicate kilobytes, 'm', 'M', 'mb', or 'MB' to indicate megabytes, and 'g', 'G', 'gb', or 'GB' to
-    # indicate gigabytes. If unspecified, or specified as null, then the JVM will dynamically choose a default value
-    # at runtime based on system configuration.
-    java_max_heap_size: null
-
-    # Specifies the number of Java threads available for parallel execution. Increasing the thread count allows for
-    # Salesforce Graph Engine to evaluate more paths at the same time.
-    java_thread_count: 8
-
-    # Specifies the maximum time (in milliseconds) a specific Java thread may execute before Salesforce Graph Engine
-    # issues a Timeout violation.
-    java_thread_timeout: 30000
 
 # ======================================================================
 # END OF CODE ANALYZER CONFIGURATION

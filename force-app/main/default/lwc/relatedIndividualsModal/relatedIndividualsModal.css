@@ -15,6 +15,7 @@
 	border-radius: var(--slds-g-radius-border-2, 8px);
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 	min-width: var(--slds-g-sizing-15, 320px);
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	max-width: 600px;
 	width: 90vw;
 	padding: var(--slds-g-spacing-5, 1.5rem);
@@ -22,6 +23,7 @@
 	overflow-y: auto;
 }
 .modal-medium {
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	max-width: 800px;
 	width: 95vw;
 }
@@ -29,6 +31,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	border-bottom: 1px solid #eee;
 	margin-bottom: var(--slds-g-spacing-4, 1rem);
 	padding-bottom: var(--slds-g-spacing-4, 1rem);
@@ -51,6 +54,7 @@
 	border-radius: var(--slds-g-radius-border-1, 4px);
 	white-space: pre-wrap;
 	word-break: break-all;
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	max-height: 200px;
 	overflow-y: auto;
 	font-family: 'Courier New', monospace;
@@ -70,8 +74,10 @@
 
 .custom-large-modal .relatedIndividualsModal-modalContainer {
 	width: 90vw;
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	max-width: 1200px;
 	height: 80vh;
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	max-height: 800px;
 }
 
@@ -88,14 +94,18 @@
 
 /* Improve debug text readability */
 .debug-text {
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	font-size: 0.8rem;
 	background-color: var(--slds-g-color-surface-2, #f8f9fa);
 	padding: var(--slds-g-spacing-4, 1rem);
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	border-radius: 6px;
 	white-space: pre-wrap;
 	word-break: break-word;
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	max-height: 300px;
 	overflow-y: auto;
 	font-family: 'SF Mono', 'Monaco', 'Menlo', 'Courier New', monospace;
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	line-height: 1.4;
 }

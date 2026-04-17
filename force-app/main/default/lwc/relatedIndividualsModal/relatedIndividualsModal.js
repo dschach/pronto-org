@@ -1,10 +1,12 @@
-import { LightningElement, api, wire, track } from 'lwc';
-//import getRelatedIndividuals from '@salesforce/apex/GetRelatedIndividuals.getRelatedIndividuals';
+import { LightningElement, api, track } from 'lwc';
+// Import getRelatedIndividuals from '@salesforce/apex/GetRelatedIndividuals.getRelatedIndividuals';
 
 export default class RelatedIndividualsModal extends LightningElement {
 	@api isOpen = false;
-	@api recordId; // Contact or Lead Id
-	@api debugMode = false; // Changed from true to false to comply with LWC standards
+	// Contact or Lead Id
+	@api recordId;
+	// Changed from true to false to comply with LWC standards
+	@api debugMode = false;
 
 	@track data = [];
 	@track columns = [

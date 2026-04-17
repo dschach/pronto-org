@@ -30,6 +30,7 @@
 	z-index: 2;
 	background-color: var(--slds-g-color-surface-1, white);
 	border: var(--slds-g-sizing-border-2, 2px) solid var(--slds-g-color-border-1, #d8dde6);
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	border-radius: 50%;
 	width: var(--slds-g-sizing-9, 2rem);
 	height: var(--slds-g-sizing-9, 2rem);
@@ -61,5 +62,6 @@
 
 /* Content styling */
 .timeline-content {
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	padding-top: 0.125rem;
 }

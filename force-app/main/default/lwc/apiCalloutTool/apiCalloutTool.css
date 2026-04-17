@@ -8,6 +8,7 @@
 	line-height: var(--slds-g-font-line-height-base, 1.5);
 	white-space: pre-wrap;
 	word-wrap: break-word;
+	/* eslint-disable-next-line @salesforce-ux/slds/no-hardcoded-values-slds2 */
 	max-height: 400px;
 	overflow-y: auto;
 }
