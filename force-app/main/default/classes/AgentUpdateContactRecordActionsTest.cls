@@ -51,7 +51,65 @@ private class AgentUpdateContactRecordActionsTest {
     List<AgentUpdateContactRecordActions.Response> resp = AgentUpdateContactRecordActions.invoke(
       new List<AgentUpdateContactRecordActions.Request>{ req }
     );
-    System.assertEquals(true, resp[0].success, resp[0].message);
-    System.assertEquals('No changes provided.', resp[0].message);
+    Assert.areEqual(true, resp[0].success, resp[0].message);
+    Assert.areEqual('No changes provided.', resp[0].message);
+    Assert.isNotNull(resp[0].returnedContact, 'Returned contact should be queried even with no changes');
+  }
+
+  @IsTest
+  static void missingVerifiedCustomerIdReturnsError() {
+    AgentUpdateContactRecordActions.Request req = new AgentUpdateContactRecordActions.Request();
+
+    Test.startTest();
+    List<AgentUpdateContactRecordActions.Response> resp = AgentUpdateContactRecordActions.invoke(
+      new List<AgentUpdateContactRecordActions.Request>{ req }
+    );
+    Test.stopTest();
+
+    Assert.areEqual(false, resp[0].success);
+    Assert.areEqual('verifiedCustomerId is required.', resp[0].message);
+  }
+
+  @IsTest
+  static void nullRequestListReturnsError() {
+    Test.startTest();
+    List<AgentUpdateContactRecordActions.Response> resp = AgentUpdateContactRecordActions.invoke(null);
+    Test.stopTest();
+
+    Assert.areEqual(false, resp[0].success);
+    Assert.areEqual('verifiedCustomerId is required.', resp[0].message);
+  }
+
+  @IsTest
+  static void updatesAllAddressFieldsWhenProvided() {
+    Contact c = new Contact(LastName = 'Tester', Email = 'old@example.com');
+    insert c;
+
+    AgentUpdateContactRecordActions.Request req = new AgentUpdateContactRecordActions.Request();
+    req.verifiedCustomerId = c.Id;
+    req.email = 'new@example.com';
+    req.phone = '555-9999';
+    req.mailingStreet = '1 Updated Way';
+    req.mailingCity = 'New Town';
+    req.mailingPostalCode = '94000';
+
+    Test.startTest();
+    List<AgentUpdateContactRecordActions.Response> resp = AgentUpdateContactRecordActions.invoke(
+      new List<AgentUpdateContactRecordActions.Request>{ req }
+    );
+    Test.stopTest();
+
+    Assert.areEqual(true, resp[0].success, resp[0].message);
+    Assert.areEqual('OK', resp[0].message);
+    Contact reloaded = [
+      SELECT Email, Phone, MailingStreet, MailingCity, MailingPostalCode
+      FROM Contact
+      WHERE Id = :c.Id
+    ];
+    Assert.areEqual('new@example.com', reloaded.Email);
+    Assert.areEqual('555-9999', reloaded.Phone);
+    Assert.areEqual('1 Updated Way', reloaded.MailingStreet);
+    Assert.areEqual('New Town', reloaded.MailingCity);
+    Assert.areEqual('94000', reloaded.MailingPostalCode);
   }
 }

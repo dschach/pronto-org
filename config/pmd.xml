@@ -121,7 +121,7 @@
 		<properties>
 			<property name="xpath">
 				<value><![CDATA[
-          ApexFile/UserClass[
+          //ApexFile/UserClass[
             ModifierNode[
               @Public = false() and
               @Private = false() and

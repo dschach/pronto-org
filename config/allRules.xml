@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ruleset
+	name="All Rules (merged)"
+	xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+	<description>
+    Merged PMD ruleset combining pmd.xml (reference custom rules),
+    ruleset.xml (dschach default), and deployRules.xml (deploy-gate rules).
+    Overlapping rules have been consolidated; properties and suppressions from
+    each source are unioned.
+  </description>
+
+	<exclude-pattern>.*/.sfdx/.*</exclude-pattern>
+	<exclude-pattern>.*/.sf/.*</exclude-pattern>
+	<exclude-pattern>.*/node_modules/.*</exclude-pattern>
+	<exclude-pattern>.*/doc.*/.*</exclude-pattern>
+	<exclude-pattern>.*/classes/apex-rollup/.*</exclude-pattern>
+
+	<!-- ============================================================ -->
+	<!-- APEX SECURITY                                                -->
+	<!-- ============================================================ -->
+
+	<rule ref="category/apex/security.xml/ApexCRUDViolation">
+		<properties>
+			<property name="readAuthMethodPattern" value="" />
+			<property name="readAuthMethodTypeParamIndex" value="0" />
+			<property name="mergeAuthMethodPattern" value="" />
+			<property name="mergeAuthMethodTypeParamIndex" value="0" />
+			<property name="updateAuthMethodPattern" value="" />
+			<property name="updateAuthMethodTypeParamIndex" value="0" />
+			<property name="createAuthMethodPattern" value="" />
+			<property name="createAuthMethodTypeParamIndex" value="0" />
+			<property name="deleteAuthMethodPattern" value="" />
+			<property name="deleteAuthMethodTypeParamIndex" value="0" />
+			<property name="undeleteAuthMethodPattern" value="" />
+			<property name="undeleteAuthMethodTypeParamIndex" value="0" />
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- APEX PERFORMANCE                                             -->
+	<!-- ============================================================ -->
+
+	<rule ref="category/apex/performance.xml/AvoidDebugStatements" message="Avoid debug statements since they impact performance.">
+		<properties>
+			<property name="violationSuppressXPath">
+				<value><![CDATA[
+					./ancestor-or-self::Method[descendant::ModifierNode/Annotation[@Image="IsTest"]]
+				]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/performance.xml/AvoidNonRestrictiveQueries">
+		<properties>
+			<property name="violationSuppressXPath">
+				<value><![CDATA[
+					./ancestor-or-self::UserClass/ModifierNode[@Test=true()]
+				]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/performance.xml/EagerlyLoadedDescribeSObjectResult">
+		<properties>
+			<property name="noDefault" value="false" />
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- APEX BEST PRACTICES                                          -->
+	<!-- ============================================================ -->
+
+	<rule ref="category/apex/bestpractices.xml/ApexUnitTestClassShouldHaveAsserts">
+		<properties>
+			<property name="additionalAssertMethodPattern" value="" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/bestpractices.xml/DebugsShouldUseLoggingLevel">
+		<properties>
+			<property name="strictMode" value="false" />
+		</properties>
+	</rule>
+
+	<rule
+		ref="category/apex/bestpractices.xml/ApexUnitTestShouldNotUseSeeAllDataTrue"
+		message="@isTest(seeAllData=true) should not be used in Apex unit tests because it opens up the existing database data for unexpected modification by tests">
+		<priority>2</priority>
+		<properties>
+			<property name="violationSuppressXPath">
+				<value><![CDATA[
+					./ancestor-or-self::UserClass[
+						starts-with(@Image, 'Lightning') or
+						starts-with(@Image, 'Communities') or
+						starts-with(@Image, 'Forgot') or
+						starts-with(@Image, 'Microbatch') or
+						starts-with(@Image, 'Change') or
+						((starts-with(@Image, 'Site') and ends-with(@Image, 'Test')) or
+						starts-with(@Image, 'MyProfile')
+					]
+				]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- APEX ERROR PRONE                                             -->
+	<!-- ============================================================ -->
+
+	<rule ref="category/apex/errorprone.xml/EmptyCatchBlock" message="Avoid empty catch blocks">
+		<priority>2</priority>
+		<properties>
+			<property name="allowCommentedBlocks" value="false" />
+			<property name="allowExceptionNameRegex" value="^(ignored|expected)$" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/errorprone.xml/EmptyStatementBlock" message="Avoid empty block statements.">
+		<priority>2</priority>
+		<properties>
+			<property name="reportEmptyPrivateNoArgConstructor" value="true" />
+			<property name="reportEmptyVirtualMethod" value="true" />
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- APEX DOCUMENTATION                                           -->
+	<!-- ============================================================ -->
+
+	<rule ref="category/apex/documentation.xml/ApexDoc">
+		<properties>
+			<property name="reportMissingDescription" value="false" />
+			<property name="reportPrivate" value="true" />
+			<property name="reportProtected" value="true" />
+			<property name="reportProperty" value="false" />
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- APEX CODESTYLE                                               -->
+	<!-- ============================================================ -->
+
+	<rule ref="category/apex/codestyle.xml/ClassNamingConventions" message="Class name does not fit naming convention">
+		<priority>2</priority>
+		<properties>
+			<property name="testClassPattern" value="[A-Z][a-zA-Z0-9_]*" />
+			<property name="innerClassPattern" value="[A-Z][a-zA-Z0-9_]*" />
+			<property name="innerInterfacePattern" value="[A-Z][a-zA-Z0-9_]*" />
+			<property name="abstractClassPattern" value="[A-Z][a-zA-Z0-9_]*" />
+			<property name="classPattern" value="[A-Z][a-zA-Z0-9_]*" />
+			<property name="interfacePattern" value="[A-Z][a-zA-Z0-9_]*" />
+			<property name="enumPattern" value="[A-Z][a-zA-Z0-9_]*" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/codestyle.xml/FieldNamingConventions">
+		<properties>
+			<property name="enumConstantPattern" value="[A-Z][A-Z0-9_]*" />
+			<property name="constantPattern" value="[A-Z][A-Z0-9_]*" />
+			<property name="finalPattern" value="[a-z][a-zA-Z0-9]*" />
+			<property name="staticPattern" value="[a-z][a-zA-Z0-9]*" />
+			<property name="instancePattern" value="[a-z][a-zA-Z0-9]*" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/codestyle.xml/FormalParameterNamingConventions">
+		<properties>
+			<property name="finalMethodParameterPattern" value="[a-z][a-zA-Z0-9]*" />
+			<property name="methodParameterPattern" value="[a-z][a-zA-Z0-9]*" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/codestyle.xml/LocalVariableNamingConventions">
+		<properties>
+			<property name="finalLocalPattern" value="[a-zA-Z][a-zA-Z0-9]*" />
+			<property name="localPattern" value="[a-z][a-zA-Z0-9]*" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/codestyle.xml/MethodNamingConventions" message="Method name does not fit naming convention.">
+		<priority>2</priority>
+		<properties>
+			<property name="testPattern" value="[a-z][a-zA-Z0-9]*" />
+			<property name="staticPattern" value="[a-z][a-zA-Z0-9_]*" />
+			<property name="instancePattern" value="[a-z][a-zA-Z0-9_]*" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/codestyle.xml/PropertyNamingConventions">
+		<properties>
+			<property name="staticPattern" value="[a-z][a-zA-Z0-9]*" />
+			<property name="instancePattern" value="[a-z][a-zA-Z0-9]*" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/codestyle.xml/OneDeclarationPerLine">
+		<priority>1</priority>
+		<properties>
+			<property name="strictMode" value="false" />
+			<property name="reportInForLoopInitializer" value="true" />
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- APEX DESIGN                                                  -->
+	<!-- ============================================================ -->
+
+	<rule ref="category/apex/design.xml/AvoidDeeplyNestedIfStmts">
+		<properties>
+			<property name="problemDepth" value="3" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/design.xml/CognitiveComplexity">
+		<properties>
+			<property name="classReportLevel" value="50" />
+			<property name="methodReportLevel" value="15" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/design.xml/CyclomaticComplexity">
+		<properties>
+			<property name="classReportLevel" value="40" />
+			<property name="methodReportLevel" value="10" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/design.xml/ExcessiveParameterList">
+		<properties>
+			<property name="minimum" value="4" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/design.xml/ExcessivePublicCount">
+		<properties>
+			<property name="minimum" value="20" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/design.xml/StdCyclomaticComplexity">
+		<properties>
+			<property name="reportLevel" value="10" />
+			<property name="showClassesComplexity" value="true" />
+			<property name="showMethodsComplexity" value="true" />
+		</properties>
+	</rule>
+
+	<rule ref="category/apex/design.xml/TooManyFields">
+		<properties>
+			<property name="maxfields" value="15" />
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- JAVASCRIPT                                                   -->
+	<!-- ============================================================ -->
+
+	<rule ref="category/ecmascript/errorprone.xml/AvoidTrailingComma">
+		<properties>
+			<property name="allowObjectLiteral" value="false" />
+			<property name="allowArrayLiteral" value="false" />
+		</properties>
+	</rule>
+
+	<rule ref="category/ecmascript/codestyle.xml/AssignmentInOperand">
+		<properties>
+			<property name="allowIf" value="false" />
+			<property name="allowFor" value="false" />
+			<property name="allowWhile" value="false" />
+			<property name="allowTernary" value="false" />
+			<property name="allowTernaryResults" value="false" />
+			<property name="allowIncrementDecrement" value="false" />
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- CUSTOM RULES: VISUALFORCE                                    -->
+	<!-- ============================================================ -->
+
+	<rule name="AltTextOnImages" message="Always use an 'alt' attribute for images" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule" language="visualforce">
+		<description>All images require alt text for accessibility compliance.</description>
+		<priority>3</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //Element[matches(@Name,'^apex:image|img$')][count(alt)=0]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- CUSTOM RULES: APEX ACCESS AND SHARING                        -->
+	<!-- ============================================================ -->
+
+	<rule
+		name="DeclareAccessOnMethods"
+		message="Explicitly use public/private/protected/global on Apex methods"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+		language="apex">
+		<description>Declare an explicit access modifier on all non-test methods.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //Method[
+            ModifierNode[
+              @Public = false() and
+              @Private = false() and
+              @Protected = false() and
+              @Global = false() and
+              @Static = false()
+            ] and
+            ancestor::UserClass/ModifierNode[@Test=false()]
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule
+		name="DoNotUseWithoutSharing"
+		message="Use with sharing or inherited sharing, or document the justification for without sharing"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+		language="apex">
+		<description>Flags any class declared with without sharing. Document the justification in a code comment.</description>
+		<priority>3</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //UserClass/ModifierNode[@WithoutSharing=true()]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule
+		name="RequireExplicitSharing"
+		message="Explicitly declare with sharing, without sharing, or inherited sharing"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+		language="apex">
+		<description>All Apex classes must declare an explicit sharing model. Does not apply to interfaces or enums, which cannot declare sharing.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //UserClass[
+            ModifierNode[
+              @WithoutSharing=false() and
+              @WithSharing=false() and
+              @InheritedSharing=false() and
+              @Nested = false()
+            ] and
+            @Interface = false() and
+            @Enum = false()
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule name="RequireOuterClassAccess" message="Specify public, private, or global on outer Apex classes" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule" language="apex">
+		<description>All outer Apex classes must have an explicit access modifier.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //ApexFile/UserClass[
+            ModifierNode[
+              @Public = false() and
+              @Private = false() and
+              @Global = false()
+            ] and
+            @Nested = false()
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule
+		name="DoNotRunAsCurrentUser"
+		message="Do not execute test methods as the running user - use a dedicated test user instead"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule"
+		language="apex">
+		<description>Test methods must not use System.runAs(UserInfo.getUserId()).</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //RunAsBlockStatement[
+            .//MethodCallExpression[lower-case(@FullMethodName)='userinfo.getuserid'] and
+            ancestor::Method/ModifierNode[
+              count(Annotation[lower-case(@Name) = 'testsetup']) = 0
+            ]
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- CUSTOM RULES: PERMISSION GOVERNANCE                          -->
+	<!-- ============================================================ -->
+
+	<rule
+		name="ModifyOrViewAllData"
+		language="xml"
+		message="ViewAllData and ModifyAllData grant unrestricted record access - restrict to System Administrator only"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Profiles and Permission Sets must not grant ViewAllData or ModifyAllData.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //(PermissionSet | Profile)/userPermissions[
+            name/text[@Text='ModifyAllData' or @Text='ViewAllData'] and
+            enabled/text[@Text='true']
+          ]
+        ]]></value>
+			</property>
+			<property name="violationSuppressXPath" value="./ancestor-or-self::Profile/custom/text[@Text='false']" />
+			<property name="violationsSuppressXPath" value="./contains(pmd:fileName(), '__')" />
+		</properties>
+	</rule>
+
+	<rule
+		name="ModifyOrViewAllRecordsCustom"
+		language="xml"
+		message="Use sharing rules to grant record access rather than View All or Modify All on custom objects"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Profiles and Permission Sets should not grant View All or Modify All Records on custom objects.</description>
+		<priority>2</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //(Profile | PermissionSet)/objectPermissions[
+            (modifyAllRecords | viewAllRecords)/text[@Text='true'] and
+            object/text[matches(@Text, '.*__[a-z]+')]
+          ]
+        ]]></value>
+			</property>
+			<property name="violationSuppressXPath" value="./ancestor-or-self::Profile/custom/text[@Text='false']" />
+			<property name="violationsSuppressXPath" value="./contains(pmd:fileName(), '__')" />
+		</properties>
+	</rule>
+
+	<rule
+		name="ModifyOrViewAllRecordsStandard"
+		language="xml"
+		message="View All or Modify All Records on standard objects bypasses the sharing model - blocking violation"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Profiles and Permission Sets must not grant View All or Modify All Records on standard objects.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //(Profile | PermissionSet)/objectPermissions[
+            (modifyAllRecords | viewAllRecords)/text[matches(@Text, 'true')] and
+            object/text[matches(@Text, '[A-Z][a-zA-Z0-9]*')]
+          ]
+        ]]></value>
+			</property>
+			<property name="violationSuppressXPath" value="(./ancestor-or-self::Profile/custom/text[@Text='false']) or (contains(pmd:fileName(), '__'))" />
+			<property name="violationsSuppressXPath" value="./contains(pmd:fileName(), '__')" />
+		</properties>
+	</rule>
+
+	<rule
+		name="ManageUsers"
+		language="xml"
+		message="Manage Users permissions should be restricted to the System Administrator profile"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Manage Users is a restricted permission.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //(Profile | PermissionSet)/userPermissions[
+            name/text[matches(@Text, 'Manage.*Users')]
+          ]
+        ]]></value>
+			</property>
+			<property name="violationSuppressXPath" value="./ancestor-or-self::Profile/custom/text[@Text='false']" />
+		</properties>
+	</rule>
+
+	<rule name="ViewSetupProfile" language="xml" message="ViewSetup should be restricted to the System Administrator profile" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>ViewSetup is a restricted permission that must not appear in custom profiles.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //Profile/userPermissions[
+            name/text[@Text='ViewSetup'] and
+            enabled/text[@Text='true']
+          ]
+        ]]></value>
+			</property>
+			<property name="violationSuppressXPath" value="./ancestor-or-self::Profile/custom/text[@Text='false']" />
+		</properties>
+	</rule>
+
+	<rule name="ViewSetupPermissionSet" language="xml" message="ViewSetup must not be granted via a Permission Set" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>ViewSetup must not appear in Permission Sets.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //PermissionSet/userPermissions[
+            name/text[@Text='ViewSetup'] and
+            enabled/text[@Text='true']
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- CUSTOM RULES: SHARING MODEL GOVERNANCE                       -->
+	<!-- ============================================================ -->
+
+	<rule
+		name="NonPrivateCustomObjectSharing"
+		language="xml"
+		message="Custom objects must use Private org-wide default sharing"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Require Private OWD for all custom objects.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //CustomObject[
+            (externalSharingModel | sharingModel)/text[@Text='Read' or @Text='ReadWrite'] and
+            count(label) > 0
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule
+		name="NonPrivateStandardObjectSharing"
+		language="xml"
+		message="Standard objects must not use ReadWrite org-wide default sharing"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Require non-ReadWrite OWD for standard objects.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //CustomObject[
+            (externalSharingModel | sharingModel)/text[@Text='ReadWrite'] and
+            count(label) = 0
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- CUSTOM RULES: METADATA DOCUMENTATION                         -->
+	<!-- ============================================================ -->
+
+	<rule name="MetadataDescriptionObjectField" language="xml" message="Add a description to explain this custom metadata" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>All custom objects and fields must have a description.</description>
+		<priority>2</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //(CustomField | CustomObject | CustomObject/fields)/fullName[
+            text and ../count(description) = 0
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule
+		name="MetadataNoDescriptionPermissionSet"
+		language="xml"
+		message="Add a description to explain custom permission sets"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Provide a description for permission sets.</description>
+		<priority>2</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //(PermissionSet)[count(description) = 0]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule
+		name="MetadataDescriptionPermission"
+		language="xml"
+		message="Add a description to explain what access this metadata grants"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>All Permission Sets, Profiles, Custom Permissions, and Permission Set Groups must have a description.</description>
+		<priority>2</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //(PermissionSet|Profile|CustomPermission|PermissionSetGroup)/label[
+            text and
+            ../count(description) = 0 and
+            (
+              ancestor::Profile/custom/text[@Text='true'] or
+              count(ancestor::Profile/custom) = 0
+            )
+          ]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule name="MetadataDescriptionFlow" language="xml" message="Add a description to explain this Flow's purpose" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>All Flows must have a description.</description>
+		<priority>2</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //Flow/label[text and ../count(description) = 0]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- CUSTOM RULES: METADATA QUALITY                               -->
+	<!-- ============================================================ -->
+
+	<rule name="NoHardcodedWeblinkURLs" language="xml" message="Do not hardcode force.com domain URLs in weblinks" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Weblink URLs must not contain hardcoded Salesforce instance URLs.</description>
+		<priority>2</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //(CustomObject/webLinks/url/text)[matches(@Text, 'https://.*force.com')]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<!--
+    Flags metadata files using API version below 58.
+    Review and increment this threshold annually as the platform advances.
+  -->
+	<rule name="BumpApiVersion" language="xml" message="Metadata is using an outdated API version - update to a recent version" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>Metadata API versions below 58 should be updated.</description>
+		<priority>3</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //apiVersion/text[number(@Image) < 58]
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- ============================================================ -->
+	<!-- CUSTOM RULES: FLOW AND PROCESS BUILDER                       -->
+	<!-- ============================================================ -->
+
+	<rule
+		name="DoNotUseProcessBuilder"
+		language="xml"
+		message="Process Builder is deprecated - migrate this automation to Flow"
+		class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+		<description>All Process Builder automations must be migrated to Flow.</description>
+		<priority>1</priority>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[
+          //Flow/processType/text[@Text='Workflow']
+        ]]></value>
+			</property>
+		</properties>
+	</rule>
+</ruleset>
+<!-- DOMXPATHRULES - here for reference -->
+<!-- <rule
+		name="ModifyOrViewAllData"
+		language="xml"
+		message="Allowing this user permission can give access and ability to modify sensitive data."
+		class="net.sourceforge.pmd.lang.xml.rule.DomXPathRule">
+		<description>Profiles and Permission Sets should not have MAD or VAD permission</description>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[ 
+					//(PermissionSet | Profile)/userPermissions/name[text()="ViewAllData" and ../enabled/text()="true" and ( ancestor::Profile/custom/text[@Text='true']  or  count(ancestor::Profile/custom) = 0)]
+				]]></value>
+			</property>
+			<property name="defaultNsUri">
+				<value>http://soap.sforce.com/2006/04/metadata</value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule
+		name="ModifyOrViewAllRecordsCustom"
+		language="xml"
+		message="Use sharing rules to grant record access rather than View All or Modify All even on module-specific objects."
+		class="net.sourceforge.pmd.lang.xml.rule.DomXPathRule">
+		<description>Profiles and Permission Sets should not have modify or view all records permission</description>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[  
+					//(Profile | PermissionSet)/objectPermissions/
+						(modifyAllRecords | viewAllRecords)[ text()='true' 
+						and ../object[matches(text(), '^.*__[a-z]+$', 'i' ) ]
+						 and ( ancestor::Profile/custom/text[@Text='true']  or  count(ancestor::Profile/custom) = 0)
+						]
+						]]></value>
+			</property>
+			<property name="defaultNsUri">
+				<value>http://soap.sforce.com/2006/04/metadata</value>
+			</property>
+		</properties>
+	</rule>
+
+	<rule
+		name="ModifyOrViewAllRecordsStandard"
+		language="xml"
+		message="View All or Modify All on standard objects is a blocker"
+		class="net.sourceforge.pmd.lang.xml.rule.DomXPathRule">
+		<description>Profiles and Permission Sets must not have modify or view all records permission for standard objects</description>
+		<properties>
+			<property name="xpath">
+				<value><![CDATA[  
+					//(Profile | PermissionSet)/objectPermissions/
+						(modifyAllRecords | viewAllRecords)[ text()='true' 
+						and ../object[matches(text(), '^[a-zA-Z0-9]+$', 'i' ) ]
+						 and ( ancestor::Profile/custom/text[@Text='true']  or  count(ancestor::Profile/custom) = 0)
+						]
+						]]></value>
+			</property>
+			<property name="defaultNsUri">
+				<value>http://soap.sforce.com/2006/04/metadata</value>
+			</property>
+		</properties>
+	</rule> -->

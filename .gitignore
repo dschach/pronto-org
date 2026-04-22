@@ -48,3 +48,4 @@ $RECYCLE.BIN/
 **/venv/
 code-analyzer.*
 !code-analyzer.yml
+test-results

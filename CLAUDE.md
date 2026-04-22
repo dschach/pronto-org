@@ -65,7 +65,11 @@ Agent access is gated by dedicated permission sets: `Merchant_Management_Agent_A
 
 ### Custom objects
 
-`force-app/main/default/objects/` is currently empty in source — the schema (Storefront, Menu, Menu Item, Promotion, Gift Certificate, etc.) lives in the org and isn't tracked here. Retrieve object metadata explicitly when you need to reason about fields.
+`force-app/main/default/objects/` holds the domain schema: `Storefront__c`, `Menu__c`, `Menu_Category__c`, `Menu_Item__c`, `Promotion__c`, `Gift_Certificate__c`, `Review__c`, `Loyalty_Transaction__c`, `Transaction__c`, `Refund__c`, `Onboarding_Application__c`, `Payment_Methods__c`, `Region__c`, `Storefront_Hours_of_Operation__c`, `Storefront_Tag__c`, plus standard-object extensions (`Account`, `Case`, `Contact`, `Campaign`, `User`). Note: as of the last snapshot these were retrieved locally but still untracked — check `git status` before assuming they're committed.
+
+### Flows
+
+`force-app/main/default/flows/` contains the agent-adjacent automation: `Route_to_Merchant_Support_Agent` and `Route_Merchant_to_Queue` (handoff from the support agent), `Issue_Refund`, `Verify_Code` + `Send_Email_with_Verification_Code` (OTP), `Add_Delivery_Instructions`, and `Personalized_Recommendations`. Several are invoked by agent topics — treat them as part of the agent surface, not standalone automation.
 
 ## Conventions
 
