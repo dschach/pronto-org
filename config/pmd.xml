@@ -175,8 +175,7 @@
           ]
         ]]></value>
 			</property>
-			<property name="violationSuppressXPath" value="//Profile/custom/text[@Text='false']" />
-			<property name="violationsSuppressXPath" value="./contains(pmd:fileName(), '__')" />
+			<property name="violationSuppressXPath" value="//Profile/custom/text[@Text='false' or (contains(pmd:fileName(), '__'))])" />
 		</properties>
 	</rule>
 
@@ -196,8 +195,7 @@
           ]
         ]]></value>
 			</property>
-			<property name="violationSuppressXPath" value="//Profile/custom/text[@Text='false']" />
-			<property name="violationsSuppressXPath" value="./contains(pmd:fileName(), '__')" />
+			<property name="violationSuppressXPath" value="//Profile/custom/text[@Text='false' or (contains(pmd:fileName(), '__'))])" />
 		</properties>
 	</rule>
 
@@ -217,8 +215,7 @@
           ]
         ]]></value>
 			</property>
-			<property name="violationSuppressXPath" value="//Profile/custom/text[@Text='false']" />
-			<property name="violationsSuppressXPath" value="./contains(pmd:fileName(), '__')" />
+			<property name="violationSuppressXPath" value="//Profile/custom/text[@Text='false' or (contains(pmd:fileName(), '__'))])" />
 		</properties>
 	</rule>
 
