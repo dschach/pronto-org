@@ -34,8 +34,6 @@ log_level: 4
 ignores: # Modified from: {"files":[]}
   files:
     - "**/staticresources/**"
-    # Stock Communities auth Aura components — boilerplate shipped by Salesforce.
-    # Not actively maintained here, so suppress scanner noise (style/SLDS violations).
     - "**/aura/loginForm/**"
     - "**/aura/selfRegister/**"
     - "**/aura/forgotPassword/**"
@@ -2051,11 +2049,6 @@ rules:
         - Recommended
         - CodeStyle
         - Apex
-    "ApexAssertionsShouldIncludeMessage":
-      severity: 3
-      tags:
-        - BestPractices
-        - Apex
     "ApexBadCrypto":
       severity: 2
       tags:
@@ -2082,7 +2075,7 @@ rules:
         - Security
         - Apex
     "ApexDoc":
-      severity: 3 # Modified from: 4
+      severity: 5 # Modified from: 4
       tags: # Modified from: ["Recommended","Documentation","Apex"]
         - Recommended
         - Documentation
@@ -2125,12 +2118,6 @@ rules:
         - BestPractices
         - Apex
         - dschachPMDRuleset
-    "ApexUnitTestClassShouldHaveRunAs":
-      severity: 4
-      tags:
-        - Recommended
-        - BestPractices
-        - Apex
     "ApexUnitTestMethodShouldHaveIsTestAnnotation":
       severity: 2
       tags:
@@ -2683,13 +2670,6 @@ rules:
         - dschachPMDRuleset
         - Xml
         - Custom
-    "MetadataDescriptionObjectField":
-      severity: 4
-      tags:
-        - Recommended
-        - dschachPMDRuleset
-        - Xml
-        - Custom
     "MetadataDescriptionPermission":
       severity: 4
       tags:
@@ -2974,6 +2954,66 @@ rules:
       tags:
         - CodeStyle
         - JavaScript
+    "ApexAssertionsShouldIncludeMessage":
+      severity: 3
+      tags:
+        - BestPractices
+        - Apex
+      disabled: true # Modified from: false
+    "ApexUnitTestClassShouldHaveRunAs":
+      severity: 4
+      tags:
+        - Recommended
+        - BestPractices
+        - Apex
+      disabled: true # Modified from: false
+    "MetadataDescriptionObjectField":
+      severity: 4
+      tags:
+        - Recommended
+        - dschachPMDRuleset
+        - Xml
+        - Custom
+      disabled: true # Modified from: false
+
+  # ======================================================================
+  # CPD ENGINE RULE OVERRIDES
+  # ======================================================================
+  cpd:
+    "DetectCopyPasteForApex":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Apex
+    "DetectCopyPasteForHtml":
+      severity: 5
+      tags:
+        - Design
+        - Html
+    "DetectCopyPasteForJavascript":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Javascript
+    "DetectCopyPasteForTypescript":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Typescript
+    "DetectCopyPasteForVisualforce":
+      severity: 5
+      tags:
+        - Recommended
+        - Design
+        - Visualforce
+    "DetectCopyPasteForXml":
+      severity: 5
+      tags:
+        - Design
+        - Xml
 
   # ======================================================================
   # SFGE ENGINE RULE OVERRIDES
@@ -3021,45 +3061,6 @@ rules:
         - DevPreview
         - Performance
         - Apex
-
-  # ======================================================================
-  # CPD ENGINE RULE OVERRIDES
-  # ======================================================================
-  cpd:
-    "DetectCopyPasteForApex":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Apex
-    "DetectCopyPasteForHtml":
-      severity: 5
-      tags:
-        - Design
-        - Html
-    "DetectCopyPasteForJavascript":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Javascript
-    "DetectCopyPasteForTypescript":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Typescript
-    "DetectCopyPasteForVisualforce":
-      severity: 5
-      tags:
-        - Recommended
-        - Design
-        - Visualforce
-    "DetectCopyPasteForXml":
-      severity: 5
-      tags:
-        - Design
-        - Xml
 
 # Engine specific custom configuration settings of the format engines.{engine_name}.{property_name} = {value} where:
 #   {engine_name} is the name of the engine containing the setting that you want to override.
@@ -3149,7 +3150,7 @@ engines:
     eslint_ignore_file: null
 
     # Whether to have Code Analyzer automatically discover/apply any ESLint configuration and ignore files from your workspace.
-    auto_discover_eslint_config: true
+    auto_discover_eslint_config: true # Modified from: false
 
     # Whether to turn off the default base configuration that supplies the standard ESLint rules for JavaScript files.
     # The base configuration for JavaScript files adds the rules from the "eslint:all" configuration to Code Analyzer.
@@ -3275,43 +3276,6 @@ engines:
       - config/ruleset.xml
 
   # ======================================================================
-  # SFGE ENGINE CONFIGURATION
-  # This engine is in Developer Preview and is subject to change.
-  # To learn more about this configuration, visit:
-  #   [PLACEHOLDER LINK]
-  # ======================================================================
-  sfge:
-    # Whether to turn off the 'sfge' engine so that it is not included when running Code Analyzer commands.
-    disable_engine: false
-
-    # Whether to prevent 'sfge' from throwing LimitReached violations for complex paths.
-    # By default, Salesforce Graph Engine attempts to detect complex paths that might cause OutOfMemory errors,
-    # and throws LimitReached violations for these paths to continue evaluating other paths safely. The allowed
-    # complexity is dynamically calculated based on the max Java heap size available, but in some cases you may
-    # desire to disable this check in addition to increasing java_max_heap_size.
-    disable_limit_reached_violations: false
-
-    # Indicates the specific 'java' command associated with the JRE or JDK to use for the 'sfge' engine.
-    # May be provided as the name of a command that exists on the path, or an absolute file path location.
-    # If unspecified, or specified as null, then an attempt will be made to automatically discover a 'java' command from your environment.
-    java_command: null # Last calculated by the config command as: "java"
-
-    # Specifies the maximum size (in bytes) of the Java heap. The specified value is appended to the '-Xmx' Java
-    # command option. The value must be a multiple of 1024, and greater than 2MB. Append the letters 'k', 'K', 'kb',
-    # or 'KB' to indicate kilobytes, 'm', 'M', 'mb', or 'MB' to indicate megabytes, and 'g', 'G', 'gb', or 'GB' to
-    # indicate gigabytes. If unspecified, or specified as null, then the JVM will dynamically choose a default value
-    # at runtime based on system configuration.
-    java_max_heap_size: null
-
-    # Specifies the number of Java threads available for parallel execution. Increasing the thread count allows for
-    # Salesforce Graph Engine to evaluate more paths at the same time.
-    java_thread_count: 8
-
-    # Specifies the maximum time (in milliseconds) a specific Java thread may execute before Salesforce Graph Engine
-    # issues a Timeout violation.
-    java_thread_timeout: 30000
-
-  # ======================================================================
   # CPD ENGINE CONFIGURATION
   # To learn more about this configuration, visit:
   #   https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-cpd.html#cpd-configuration-reference
@@ -3369,6 +3333,42 @@ engines:
     # Indicates whether to ignore multiple copies of files of the same name and length.
     skip_duplicate_files: true # Modified from: false
 
+  # ======================================================================
+  # SFGE ENGINE CONFIGURATION
+  # This engine is in Developer Preview and is subject to change.
+  # To learn more about this configuration, visit:
+  #   [PLACEHOLDER LINK]
+  # ======================================================================
+  sfge:
+    # Whether to turn off the 'sfge' engine so that it is not included when running Code Analyzer commands.
+    disable_engine: false
+
+    # Whether to prevent 'sfge' from throwing LimitReached violations for complex paths.
+    # By default, Salesforce Graph Engine attempts to detect complex paths that might cause OutOfMemory errors,
+    # and throws LimitReached violations for these paths to continue evaluating other paths safely. The allowed
+    # complexity is dynamically calculated based on the max Java heap size available, but in some cases you may
+    # desire to disable this check in addition to increasing java_max_heap_size.
+    disable_limit_reached_violations: false
+
+    # Indicates the specific 'java' command associated with the JRE or JDK to use for the 'sfge' engine.
+    # May be provided as the name of a command that exists on the path, or an absolute file path location.
+    # If unspecified, or specified as null, then an attempt will be made to automatically discover a 'java' command from your environment.
+    java_command: null # Last calculated by the config command as: "java"
+
+    # Specifies the maximum size (in bytes) of the Java heap. The specified value is appended to the '-Xmx' Java
+    # command option. The value must be a multiple of 1024, and greater than 2MB. Append the letters 'k', 'K', 'kb',
+    # or 'KB' to indicate kilobytes, 'm', 'M', 'mb', or 'MB' to indicate megabytes, and 'g', 'G', 'gb', or 'GB' to
+    # indicate gigabytes. If unspecified, or specified as null, then the JVM will dynamically choose a default value
+    # at runtime based on system configuration.
+    java_max_heap_size: null
+
+    # Specifies the number of Java threads available for parallel execution. Increasing the thread count allows for
+    # Salesforce Graph Engine to evaluate more paths at the same time.
+    java_thread_count: 8
+
+    # Specifies the maximum time (in milliseconds) a specific Java thread may execute before Salesforce Graph Engine
+    # issues a Timeout violation.
+    java_thread_timeout: 30000
 
 # ======================================================================
 # END OF CODE ANALYZER CONFIGURATION

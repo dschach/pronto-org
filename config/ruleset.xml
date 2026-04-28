@@ -83,7 +83,7 @@
 								starts-with(@Image, 'Forgot') or
 								starts-with(@Image, 'Microbatch') or
 								starts-with(@Image, 'Change') or 
-								((starts-with(@Image, 'Site') and ends-with(@Image, 'Test')) or
+								(starts-with(@Image, 'Site') and ends-with(@Image, 'Test')) or 
 								starts-with(@Image, 'MyProfile')
 							]
 						]]>
@@ -91,6 +91,7 @@
 			</property>
 		</properties>
 	</rule>
+	<!-- (starts-with(@Image, 'Site') and ends-with(@Image, 'Test')) or -->
 
 	<!-- APEX ERROR PRONE -->
 
@@ -399,7 +400,7 @@
 						]
 						]]> </value>
 			</property>
-			<property name="violationSuppressXPath" value="(./ancestor-or-self::Profile/custom/text[@Text='false']) or (contains(pmd:fileName(), '__'))" />
+			<property name="violationSuppressXPath" value="./ancestor-or-self::Profile/custom/text[@Text='false' or contains(pmd:fileName(), '__')]" />
 		</properties>
 	</rule>
 

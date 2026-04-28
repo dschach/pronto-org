@@ -463,7 +463,7 @@
           ]
         ]]></value>
 			</property>
-			<property name="violationSuppressXPath" value="(./ancestor-or-self::Profile/custom/text[@Text='false']) or (contains(pmd:fileName(), '__'))" />
+			<property name="violationSuppressXPath" value="(./ancestor-or-self::Profile/custom/text[@Text='false' or (contains(pmd:fileName(), '__'))])" />
 			<property name="violationsSuppressXPath" value="./contains(pmd:fileName(), '__')" />
 		</properties>
 	</rule>
